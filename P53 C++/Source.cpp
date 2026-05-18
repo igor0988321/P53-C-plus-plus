@@ -3,6 +3,17 @@
 
 using namespace std;
 
+//enum Color
+//{
+//	Black = 0, Blue = 1, Green = 2, Cyan = 3, Red = 4, Magenta = 5, Brown = 6, LightGray = 7, DarkGray = 8,
+//	LightBlue = 9, LightGreen = 10, LightCyan = 11, LightRed = 12, LightMagenta = 13, Yellow = 14, White = 15
+//};
+//
+//void SetColor(int text, int background)
+//{
+//	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), (WORD)((background << 4) | text));
+//}
+
 int main()
 {
 	SetConsoleCP(65001);
@@ -105,27 +116,121 @@ int main()
 	//Завдання 3
 	//Написати програму, що обчислює, з якою швидкістю бігун пробіг дистанцію.
 
-	double hour, distance, hour2, speed,  secund, b;
+	//double hour, distance, hour2, speed,  secund, b;
 
-	cout << "Ведіть довжину дистанції (метрів)" << endl;
-	cin >> distance;
-	cout << "Ведіть час (хв.сек)" << endl;
-	cin >> hour;
+	//cout << "Ведіть довжину дистанції (метрів)" << endl;
+	//cin >> distance;
+	//cout << "Ведіть час (хв.сек)" << endl;
+	//cin >> hour;
 
-	int minutes = hour;
-	b = hour - minutes;
-	secund = b * 100;
+	//int minutes = hour;
+	//b = hour - minutes;
+	//secund = b * 100;
 
-	hour2 = minutes * 60 + secund;
+	//hour2 = minutes * 60 + secund;
 
-	speed = (distance / hour2) * 3.6;
+	//speed = (distance / hour2) * 3.6;
 
-	cout << "Обчислення швидкості бігу" << endl;
-	cout << "Ведіть довжину дистанції (метрів) = "<< " " << distance << endl;
-	cout << "Ведіть час (хв.сек)" << hour << endl;
-	cout << "Дистанція:"<< " " << distance << " " << "м" << endl;
-	cout << "Час:"<< " " << minutes << " " << "хв" << " " << " " << secund << " " << "сек" << " " << "=" << " " << hour2 << " " << "сек" << endl;
-	cout << "Ви бігли зі швидкістю"<< " " << speed << " " << " " << "км/год" << endl;
+	//cout << "Обчислення швидкості бігу" << endl;
+	//cout << "Ведіть довжину дистанції (метрів) = "<< " " << distance << endl;
+	//cout << "Ведіть час (хв.сек)" << hour << endl;
+	//cout << "Дистанція:"<< " " << distance << " " << "м" << endl;
+	//cout << "Час:"<< " " << minutes << " " << "хв" << " " << " " << secund << " " << "сек" << " " << "=" << " " << hour2 << " " << "сек" << endl;
+	//cout << "Ви бігли зі швидкістю"<< " " << speed << " " << " " << "км/год" << endl;
 
+
+	//18.05.2026 Lesson 2
+//SetColor(LightRed, Blue);
+//cout << "klaj fejwerf" << endl;
+//
+//SetColor(White, Blue);
+
+
+
+
+//int a, b, c;
+//cin >> a >> b >> c;
+
+//if (a % 2 == 0)
+//{
+//	cout << "a is even" << endl;
+//}
+//else
+//{
+//	cout << "a is odd" << endl;
+//}
+
+// 3 1 2
+//if (a > b && a > c)
+//{
+//	cout << a << endl;
+//}
+//else if (b > c)
+//{
+//	cout << b << endl;
+//}
+//else
+//{
+//	cout << c << endl;
+//}
+
+// 2+3
+
+//float a, b;
+//char op;
+//cin >> a >> op >> b;
+
+//switch (op)
+//{
+//case '+': cout << a + b << endl; break;
+//case '-': cout << a - b << endl; break;
+//case '*': cout << a * b << endl; break;
+//case '/': cout << a / b << endl; break;
+//default: 
+//	cout << "Error. Use correct symbol (+, -, *, /)" << endl;
+//	break;	
+//}
+
+//if (op == '+')
+//{
+//	cout << a + b << endl;
+//}
+//else if (op == '-')
+//{
+//	cout << a - b << endl;
+//}
+//else if (op == '*')
+//{
+//	cout << a * b << endl;
+//}
+//else if (op == '/')
+//{
+//	cout << a / b << endl;
+//}
+//else
+//{
+//	cout << "Error. Use correct symbol (+, -, *, /)" << endl;
+//}
+
+
+//int m;
+//cin >> m;
+//switch (m) {
+//case 1: case 2: case 12: cout << "Winter"; break;
+//case 3: case 4:	case 5:  cout << "Spring"; break;
+
+//case 6: cout << "Summer"; break;
+//case 7: cout << "Summer"; break;
+//case 8: cout << "Summer"; break;
+
+//case 9: cout << "Autumn"; break;
+//case 10: cout << "Autumn"; break;
+//case 11: cout << "Autumn"; break;
+//default: cout << "Error" << endl;
+//}
+//return 0;
+
+
+	
 	return 0;
 }
