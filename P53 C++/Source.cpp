@@ -232,5 +232,154 @@ int main()
 
 
 	
+//Завдання 1
+//Користувач вводить дві дати(день, місяць, рік у вигляді цілих чисел).Необхідно визначити і вивести кількість днів між цими 
+//двома датами.Для розрахунків враховувати високосні роки, 
+//а також коректне число днів у місяцях(березень — 31, вересень — 30, лютий невисокосного року — 28 і т.д.).
+
+//int d1, m1, y1, d2, m2, y2;
+//
+//cout << "Ведіть першу дату "; cin >> d1 >> m1 >> y1;
+//
+//cout << "Ведіть другу дату "; cin >> d2 >> m2 >> y2;
+//
+//int res = y1 - 1;
+//long long day1 = res * 365 + (res / 4) - (res / 100) + (res / 400);
+//
+//
+//switch (m1 - 1) {
+//	case 11: day1 += 30;
+//	case 10: day1 += 31;
+//	case 9: day1 += 30;
+//	case 8: day1 += 31;
+//	case 7: day1 += 31;
+//	case 6: day1 += 30;
+//	case 5: day1 += 31;
+//	case 4: day1 += 30;
+//	case 3: day1 += 31;
+//	case 2: day1 += 28;
+//	case 1: day1 += 31;
+//
+//}
+//
+//day1 += d1;
+//
+//
+//if ((y1 % 4 == 0 && y1 % 100 != 0) || (y1 % 400 == 0)) {
+//	if (m1 > 2) {
+//		day1 += 1;
+//	}
+//}
+//
+//
+//int res2 = y2 - 1;
+//long long day2 = res2 * 365 + (res2 / 4) - (res2 / 100) + (res2 / 400);
+//
+//
+//switch (m2 - 1) {
+//case 11: day2 += 30;
+//case 10: day2 += 31;
+//case 9: day2 += 30;
+//case 8: day2 += 31;
+//case 7: day2 += 31;
+//case 6: day2 += 30;
+//case 5: day2 += 31;
+//case 4: day2 += 30;
+//case 3: day2 += 31;
+//case 2: day2 += 28;
+//case 1: day2 += 31;
+//
+//}
+//
+//
+//day2 += d2;
+//
+//
+//if ((y2 % 4 == 0 && y2 % 100 != 0) || (y2 % 400 == 0)) {
+//	if (m2 > 2) {
+//		day2 += 1;
+//	}
+//}
+//
+//long long result = abs(day2 - day1);
+//
+//cout << "Кількість днів між датами: " << result << endl;
+
+
+//Завдання 2
+//Зарплата менеджера становить 200$ + відсоток від продажів(продажі до 500$ — 3 %, від 500 до 1000 — 5 %, понад 1000 — 8 %).
+//Користувач вводить із клавіатури рівень продажів для трьох менеджерів.
+//Визначити їхню зарплату, визначити найкращого менеджера, нарахувати йому премію 200$, вивести підсумки на екран.
+
+int  thebest, stavka;
+
+float res1, res2, res3, bonus1, bonus2, bonus3, salary1, salary2, salary3, manager1, manager2, manager3;
+
+stavka = 200;
+
+cout << "Ведіть зарплту для першого менеджера: "; cin >> manager1;
+cout << "Ведіть зарплату для другого менеджера: ";  cin >> manager2;
+cout << "Ведіть зарплату для третього менеджера: ";  cin >> manager3;
+
+if (manager1 <= 500) {
+	bonus1 = manager1 * (3.0 / 100);
+	salary1 = stavka + bonus1;
+}
+else if (manager1 <= 1000) {
+	bonus1 = manager1 * (5.0 / 100);
+	salary1 = stavka + bonus1;
+}
+else {
+	bonus1 = manager1 * (8.0 / 100);
+	salary1 = stavka + bonus1;
+}
+
+
+if (manager2 <= 500) {
+	bonus2 = manager2 * (3.0 / 100);
+	salary2 = stavka + bonus2;
+}
+else if (manager2 <= 1000) {
+	bonus2 = manager2 * (5.0 / 100);
+	salary2 = stavka + bonus2;
+}
+else {
+	bonus2 = manager2 * (8.0 / 100);
+	salary2 = stavka + bonus2;
+}
+
+
+if (manager3 <= 500) {
+	bonus3 = manager3 * (3.0 / 100);
+	salary3 = stavka + bonus3;
+}
+else if (manager3 <= 1000) {
+	bonus3 = manager3 * (5.0 / 100);
+	salary3 = stavka + bonus3;
+}
+else {
+	bonus3 = manager3 * (8.0 / 100);
+	salary3 = stavka + bonus3;
+}
+
+
+
+if (salary1 > salary2 && salary1 > salary3) {
+	thebest = manager1;
+}
+else if (salary2 > salary1 && salary2 > salary3) {
+	thebest = manager2;
+}
+else {
+	thebest = manager3;
+}
+
+cout << "Зарплата першого менеджера: " << salary1 << endl;
+cout << "Зарплата другого менеджера: " << salary2 << endl;
+cout << "Зарплата третього менеджера: " << salary3 << endl;
+cout << "Найкращий менеджер: " << thebest << endl;
+
+
+
 	return 0;
 }
