@@ -1,5 +1,6 @@
 #include<iostream>
 #include<Windows.h>
+#include<iomanip>
 
 using namespace std;
 
@@ -311,73 +312,139 @@ int main()
 //Користувач вводить із клавіатури рівень продажів для трьох менеджерів.
 //Визначити їхню зарплату, визначити найкращого менеджера, нарахувати йому премію 200$, вивести підсумки на екран.
 
-int  thebest, stavka;
+//int  thebest, stavka;
+//
+//float res1, res2, res3, bonus1, bonus2, bonus3, salary1, salary2, salary3, manager1, manager2, manager3;
+//
+//stavka = 200;
+//
+//cout << "Ведіть зарплту для першого менеджера: "; cin >> manager1;
+//cout << "Ведіть зарплату для другого менеджера: ";  cin >> manager2;
+//cout << "Ведіть зарплату для третього менеджера: ";  cin >> manager3;
+//
+//if (manager1 <= 500) {
+//	bonus1 = manager1 * (3.0 / 100);
+//	salary1 = stavka + bonus1;
+//}
+//else if (manager1 <= 1000) {
+//	bonus1 = manager1 * (5.0 / 100);
+//	salary1 = stavka + bonus1;
+//}
+//else {
+//	bonus1 = manager1 * (8.0 / 100);
+//	salary1 = stavka + bonus1;
+//}
+//
+//
+//if (manager2 <= 500) {
+//	bonus2 = manager2 * (3.0 / 100);
+//	salary2 = stavka + bonus2;
+//}
+//else if (manager2 <= 1000) {
+//	bonus2 = manager2 * (5.0 / 100);
+//	salary2 = stavka + bonus2;
+//}
+//else {
+//	bonus2 = manager2 * (8.0 / 100);
+//	salary2 = stavka + bonus2;
+//}
+//
+//
+//if (manager3 <= 500) {
+//	bonus3 = manager3 * (3.0 / 100);
+//	salary3 = stavka + bonus3;
+//}
+//else if (manager3 <= 1000) {
+//	bonus3 = manager3 * (5.0 / 100);
+//	salary3 = stavka + bonus3;
+//}
+//else {
+//	bonus3 = manager3 * (8.0 / 100);
+//	salary3 = stavka + bonus3;
+//}
+//
+//
+//
+//if (salary1 > salary2 && salary1 > salary3) {
+//	thebest = manager1;
+//}
+//else if (salary2 > salary1 && salary2 > salary3) {
+//	thebest = manager2;
+//}
+//else {
+//	thebest = manager3;
+//}
+//
+//cout << "Зарплата першого менеджера: " << salary1 << endl;
+//cout << "Зарплата другого менеджера: " << salary2 << endl;
+//cout << "Зарплата третього менеджера: " << salary3 << endl;
+//cout << "Найкращий менеджер: " << thebest << endl;
 
-float res1, res2, res3, bonus1, bonus2, bonus3, salary1, salary2, salary3, manager1, manager2, manager3;
-
-stavka = 200;
-
-cout << "Ведіть зарплту для першого менеджера: "; cin >> manager1;
-cout << "Ведіть зарплату для другого менеджера: ";  cin >> manager2;
-cout << "Ведіть зарплату для третього менеджера: ";  cin >> manager3;
-
-if (manager1 <= 500) {
-	bonus1 = manager1 * (3.0 / 100);
-	salary1 = stavka + bonus1;
-}
-else if (manager1 <= 1000) {
-	bonus1 = manager1 * (5.0 / 100);
-	salary1 = stavka + bonus1;
-}
-else {
-	bonus1 = manager1 * (8.0 / 100);
-	salary1 = stavka + bonus1;
-}
+//typedef unsigned char Pupsik;
+	//Pupsik t;
 
 
-if (manager2 <= 500) {
-	bonus2 = manager2 * (3.0 / 100);
-	salary2 = stavka + bonus2;
-}
-else if (manager2 <= 1000) {
-	bonus2 = manager2 * (5.0 / 100);
-	salary2 = stavka + bonus2;
-}
-else {
-	bonus2 = manager2 * (8.0 / 100);
-	salary2 = stavka + bonus2;
-}
+	/// 22.05.2026
 
-
-if (manager3 <= 500) {
-	bonus3 = manager3 * (3.0 / 100);
-	salary3 = stavka + bonus3;
-}
-else if (manager3 <= 1000) {
-	bonus3 = manager3 * (5.0 / 100);
-	salary3 = stavka + bonus3;
-}
-else {
-	bonus3 = manager3 * (8.0 / 100);
-	salary3 = stavka + bonus3;
-}
+	//Дано  — цена 1 кг конфет.Вывести стоимость 0.1,
+	//	0.2, ..., 1 кг конфет.
 
 
 
-if (salary1 > salary2 && salary1 > salary3) {
-	thebest = manager1;
-}
-else if (salary2 > salary1 && salary2 > salary3) {
-	thebest = manager2;
-}
-else {
-	thebest = manager3;
-}
+	//Дано вещественное число A и целое число N(> 0).Используя один
+	//	цикл, вывести все целые степени числа A от 1 до N.
 
-cout << "Зарплата першого менеджера: " << salary1 << endl;
-cout << "Зарплата другого менеджера: " << salary2 << endl;
-cout << "Зарплата третього менеджера: " << salary3 << endl;
-cout << "Найкращий менеджер: " << thebest << endl;
+
+	//float a, res;
+	//cin >> a;
+	//res = a;
+
+	//int n = 10;
+	//for (size_t i = 0; i < n; i++)
+	//{
+	//	cout << res << endl;
+	//	res *= a;
+	//}
+//cout << "---- 1 ----" << endl;
+//SetColor(White, Black);
+//cout << " Mo Tu We TH Fr";
+//SetColor(White, LightRed);
+//cout << " Sa Su" << endl;
+//SetColor(Black, White);
+//int k = 3;
+//for (int d = 1 - k; d <= 31; d++)
+//{
+//	if (d <= 0)
+//		cout << "   ";
+//	else
+//	{
+//		SetColor(((d + k) % 7 == 6 || (d + k) % 7 == 0) ? LightRed : Black, White);
+//		cout << setw(3) << d;
+//		if ((d + k) % 7 == 0)
+//			cout << endl;
+//	}
+//}
+
+
+
+//while (5)
+//{
+
+//}
+
+//for (size_t i = 1; i <= 10; i++)
+//	cout << i << endl;
+//
+
+//int i = 1;
+//while (i <= 10)
+//	cout << i++ << endl;
+//
+
+//do
+//{
+
+//} while (true);
 
 
 
