@@ -4,16 +4,16 @@
 
 using namespace std;
 
-//enum Color
-//{
-//	Black = 0, Blue = 1, Green = 2, Cyan = 3, Red = 4, Magenta = 5, Brown = 6, LightGray = 7, DarkGray = 8,
-//	LightBlue = 9, LightGreen = 10, LightCyan = 11, LightRed = 12, LightMagenta = 13, Yellow = 14, White = 15
-//};
-//
-//void SetColor(int text, int background)
-//{
-//	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), (WORD)((background << 4) | text));
-//}
+enum Color
+{
+	Black = 0, Blue = 1, Green = 2, Cyan = 3, Red = 4, Magenta = 5, Brown = 6, LightGray = 7, DarkGray = 8,
+	LightBlue = 9, LightGreen = 10, LightCyan = 11, LightRed = 12, LightMagenta = 13, Yellow = 14, White = 15
+};
+
+void SetColor(int text, int background)
+{
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), (WORD)((background << 4) | text));
+}
 
 int main()
 {
@@ -386,8 +386,7 @@ int main()
 
 	/// 22.05.2026
 
-	//Дано  — цена 1 кг конфет.Вывести стоимость 0.1,
-	//	0.2, ..., 1 кг конфет.
+	
 
 
 
@@ -405,25 +404,69 @@ int main()
 	//	cout << res << endl;
 	//	res *= a;
 	//}
-//cout << "---- 1 ----" << endl;
-//SetColor(White, Black);
-//cout << " Mo Tu We TH Fr";
-//SetColor(White, LightRed);
-//cout << " Sa Su" << endl;
-//SetColor(Black, White);
-//int k = 3;
-//for (int d = 1 - k; d <= 31; d++)
-//{
-//	if (d <= 0)
-//		cout << "   ";
-//	else
-//	{
-//		SetColor(((d + k) % 7 == 6 || (d + k) % 7 == 0) ? LightRed : Black, White);
-//		cout << setw(3) << d;
-//		if ((d + k) % 7 == 0)
-//			cout << endl;
-//	}
-//}
+
+
+//23.05.2026 Home Work 3
+//Календарь на рік
+int k = 3;
+for (size_t month = 1; month <= 12; month++)
+{
+	int daysinmonth = 31;
+
+	SetColor(White, Black);
+
+	cout << "\n\n=== Month " << month << "===" << endl;
+
+	if (month == 4 || month == 6 || month == 9 || month == 11)
+	{
+		daysinmonth = 30;
+	}
+	else if (month == 2)
+	{
+		daysinmonth = 28;
+	}
+
+
+	SetColor(White, Black);
+	cout << " Mo Tu We TH Fr";
+	SetColor(White, LightRed);
+	cout << " Sa Su" << endl;
+	SetColor(Black, White);
+
+	
+	for (int d = 1 - k; d <= daysinmonth; d++)
+	{
+		if (d <= 0)
+			cout << "   ";
+		else
+		{
+			int dayofweek = (d + k) % 7;
+
+			if (dayofweek == 6 || dayofweek == 0)
+			{
+				SetColor(LightRed, White);
+			}
+			else
+			{
+				SetColor(Black, White);
+			}
+
+			cout << setw(3) << d;
+
+			if (dayofweek == 0)
+			{
+				cout << endl;
+			}
+		}
+	}
+
+	k = (k + daysinmonth) % 7;
+
+	cout << endl;
+
+	SetColor(White, Black);
+}
+
 
 
 
