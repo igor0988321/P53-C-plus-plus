@@ -20,6 +20,10 @@ int main()
 	SetConsoleCP(65001);
 	SetConsoleOutputCP(65001);
 
+
+	srand(time(0));
+
+
 	//cout << "Hello World!" << endl;
 	//cout << "My name Ruslan" << endl;
 
@@ -408,64 +412,64 @@ int main()
 
 //23.05.2026 Home Work 3
 //Календарь на рік
-int k = 3;
-for (size_t month = 1; month <= 12; month++)
-{
-	int daysinmonth = 31;
-
-	SetColor(White, Black);
-
-	cout << "\n\n=== Month " << month << "===" << endl;
-
-	if (month == 4 || month == 6 || month == 9 || month == 11)
-	{
-		daysinmonth = 30;
-	}
-	else if (month == 2)
-	{
-		daysinmonth = 28;
-	}
-
-
-	SetColor(White, Black);
-	cout << " Mo Tu We TH Fr";
-	SetColor(White, LightRed);
-	cout << " Sa Su" << endl;
-	SetColor(Black, White);
-
-	
-	for (int d = 1 - k; d <= daysinmonth; d++)
-	{
-		if (d <= 0)
-			cout << "   ";
-		else
-		{
-			int dayofweek = (d + k) % 7;
-
-			if (dayofweek == 6 || dayofweek == 0)
-			{
-				SetColor(LightRed, White);
-			}
-			else
-			{
-				SetColor(Black, White);
-			}
-
-			cout << setw(3) << d;
-
-			if (dayofweek == 0)
-			{
-				cout << endl;
-			}
-		}
-	}
-
-	k = (k + daysinmonth) % 7;
-
-	cout << endl;
-
-	SetColor(White, Black);
-}
+//int k = 3;
+//for (size_t month = 1; month <= 12; month++)
+//{
+//	int daysinmonth = 31;
+//
+//	SetColor(White, Black);
+//
+//	cout << "\n\n=== Month " << month << "===" << endl;
+//
+//	if (month == 4 || month == 6 || month == 9 || month == 11)
+//	{
+//		daysinmonth = 30;
+//	}
+//	else if (month == 2)
+//	{
+//		daysinmonth = 28;
+//	}
+//
+//
+//	SetColor(White, Black);
+//	cout << " Mo Tu We TH Fr";
+//	SetColor(White, LightRed);
+//	cout << " Sa Su" << endl;
+//	SetColor(Black, White);
+//
+//	
+//	for (int d = 1 - k; d <= daysinmonth; d++)
+//	{
+//		if (d <= 0)
+//			cout << "   ";
+//		else
+//		{
+//			int dayofweek = (d + k) % 7;
+//
+//			if (dayofweek == 6 || dayofweek == 0)
+//			{
+//				SetColor(LightRed, White);
+//			}
+//			else
+//			{
+//				SetColor(Black, White);
+//			}
+//
+//			cout << setw(3) << d;
+//
+//			if (dayofweek == 0)
+//			{
+//				cout << endl;
+//			}
+//		}
+//	}
+//
+//	k = (k + daysinmonth) % 7;
+//
+//	cout << endl;
+//
+//	SetColor(White, Black);
+//}
 
 
 
@@ -488,6 +492,87 @@ for (size_t month = 1; month <= 12; month++)
 //{
 
 //} while (true);
+
+/// 25.05.2026 Lesson 4
+
+	//int a, sum = 0;
+	//do
+	//{
+	//	cin >> a; 
+	//	sum += a;
+	//} while (a != 0);
+	//cout << sum << endl;
+//
+//for (size_t i = 0; i < 10; i++)
+//{
+//	cout << rand() % 10 + 10 << endl;
+//}
+
+
+int students = 4, subject = 3;
+int grade;
+int total = 0;
+int sub1 = 0;
+int sub2 = 0;
+int sub3 = 0;
+
+
+SetColor(LightRed, Black);
+cout << "Ведіть оцінку для студента (від 2 до 5): " << endl;
+SetColor(White, Black);
+
+for (size_t i = 1; i <=  students; i++)
+{
+	int students3 = 0;
+	SetColor(LightGreen, Black);
+	cout << "Студент" << i << "(Ведіть 3 оцінки через пробіл:) " << endl;
+	SetColor(White, Black);
+	
+	for (size_t j = 1; j <= subject; j++)
+	{
+		cin >> grade;
+
+		if (grade == 5)
+		{
+			total++;
+		}
+		if (grade == 3)
+		{
+			students3++;
+		}
+		if (grade == 2)
+		{
+			if (j == 1)
+			{
+				sub1++;
+			}
+			else if (j == 2)
+			{
+				sub2++;
+			}
+			else if (j == 3)
+			{
+				sub3++;
+			}
+		}
+
+	}
+
+	SetColor(LightBlue, Black);
+	cout << "Трійок у студента" << " " << students3 << endl;
+	SetColor(White, Black);
+}
+SetColor(Yellow, Black);
+cout << "----- Результат -----" << endl;
+SetColor(White, Black);
+
+cout << "Предмет 1" << " " << sub1 << endl;
+cout << "Предмет 2 " << " " << sub2 << endl;
+cout << "Предмет 3" << " " << sub3 << endl;
+SetColor(Yellow, Black);
+cout << "---------------------" << endl;
+SetColor(White, Black);
+
 
 
 
