@@ -508,70 +508,191 @@ int main()
 //	cout << rand() % 10 + 10 << endl;
 //}
 
+//
+//int students = 4, subject = 3;
+//int grade;
+//int total = 0;
+//int sub1 = 0;
+//int sub2 = 0;
+//int sub3 = 0;
+//
+//
+//SetColor(LightRed, Black);
+//cout << "Ведіть оцінку для студента (від 2 до 5): " << endl;
+//SetColor(White, Black);
+//
+//for (size_t i = 1; i <=  students; i++)
+//{
+//	int students3 = 0;
+//	SetColor(LightGreen, Black);
+//	cout << "Студент" << i << "(Ведіть 3 оцінки через пробіл:) " << endl;
+//	SetColor(White, Black);
+//	
+//	for (size_t j = 1; j <= subject; j++)
+//	{
+//		cin >> grade;
+//
+//		if (grade == 5)
+//		{
+//			total++;
+//		}
+//		if (grade == 3)
+//		{
+//			students3++;
+//		}
+//		if (grade == 2)
+//		{
+//			if (j == 1)
+//			{
+//				sub1++;
+//			}
+//			else if (j == 2)
+//			{
+//				sub2++;
+//			}
+//			else if (j == 3)
+//			{
+//				sub3++;
+//			}
+//		}
+//
+//	}
+//
+//	SetColor(LightBlue, Black);
+//	cout << "Трійок у студента" << " " << students3 << endl;
+//	SetColor(White, Black);
+//}
+//SetColor(Yellow, Black);
+//cout << "----- Результат -----" << endl;
+//SetColor(White, Black);
+//
+//cout << "Предмет 1" << " " << sub1 << endl;
+//cout << "Предмет 2 " << " " << sub2 << endl;
+//cout << "Предмет 3" << " " << sub3 << endl;
+//SetColor(Yellow, Black);
+//cout << "---------------------" << endl;
+//SetColor(White, Black);
 
-int students = 4, subject = 3;
-int grade;
-int total = 0;
-int sub1 = 0;
-int sub2 = 0;
-int sub3 = 0;
+
+//26.05.2026 Home Work 4
 
 
-SetColor(LightRed, Black);
-cout << "Ведіть оцінку для студента (від 2 до 5): " << endl;
-SetColor(White, Black);
+//Старинная задача.
+//Плата за быка 10 рублей, за корову – 5 рублей, за телёнка – полтинник(0, 5 рубля).
+//Определить, можно ли ровно на M рублей купить ровно N голов скота.Если это
+//возможно, вывести "yes", в противном случае – "no".
 
-for (size_t i = 1; i <=  students; i++)
+//float m;
+//int n;
+//cout << "Ведіть сумму: " << endl;
+//cin >> m;
+//cout << "Ведіть кількість голів: " << endl;
+//cin >> n;
+//
+//long long total = m * 100;
+//long long bull = 1000;
+//long long cow = 500;
+//long long calf = 50;
+//
+//bool found = false;
+//
+//for (size_t x = 0; x * bull <= total; x++)
+//{
+//	for (size_t  y = 0; x * bull + y * cow <= total; y++)
+//	{
+//		int z = n - x - y;
+//
+//		if (z >= 0 && (x * bull + y * cow + z * calf == total))
+//		{
+//			found = true;
+//			break;
+//		}
+//	}
+//}
+//
+//if (found)
+//{
+//	cout << "yes" << endl;
+//}
+//else
+//{
+//	cout << "no" << endl;
+//}
+
+//Даны натуральное число n и целые числа b1, b2, ..., bn.
+//Найти номер последнего числа, большего 100. Известно, что та -
+//кие числа среди заданных имеются.
+
+//int n;
+//cout << "Ведіть кількість чисел" << endl;
+//cin >> n;
+//
+//srand(time(0));
+//
+//int index = 0;
+//cout << "Згенеровані числа: " << endl;
+//for (int i = 1; i <= n; i++)
+//{
+//	int random = rand() % 200 + 1;
+//
+//	cout << i << "-е число: " << random << endl;
+//
+//	if (random > 100)
+//	{
+//		index = i;
+//	}
+//}
+//
+//cout << "Номер останього числа більшого за 100: " << index << endl;
+
+
+//В некоторой стране используются денежные купюры до -
+//стоинством в 1, 2, 4, 8, 16, 32 и 64. Дано натуральное число n.
+//Как наименьшим количеством таких денежных купюр можно вы -
+//платить суммы n, n + 1, ..., n + 10 (указать количество каждой из
+//	используемых для выплаты купюр) ? Предполагается, что имеется
+//	достаточно большое количество купюр всех достоинств.
+
+
+int n;
+cout << "Ведіть додатне число: " << endl;
+cin >> n;
+
+cout << "Результат" << endl;
+
+for (int sum = n;  sum <= n + 10;  sum++)
 {
-	int students3 = 0;
-	SetColor(LightGreen, Black);
-	cout << "Студент" << i << "(Ведіть 3 оцінки через пробіл:) " << endl;
-	SetColor(White, Black);
+	cout << "Сумма: " << sum << " = ";
+
+	int temp = sum;
+
+
+	int k64 = temp / 64; temp %= 64;
+	int k32 = temp / 32; temp %= 32;
+	int k16 = temp / 16; temp %= 16;
+	int k8 = temp / 8; temp %= 8;
+	int k4 = temp / 4; temp %= 4;
+	int k2 = temp / 2; temp %= 2;
+	int k1 = temp / 1; 
 	
-	for (size_t j = 1; j <= subject; j++)
+
+	bool a = true;
+
+	if (k64 > 0) { cout << "64 x" << k64 << " "; a = false; }
+	if (k32 > 0) { cout << "32 x" << k32 << " "; a = false; }
+	if (k16 > 0) { cout << "16 x" << k16 << " "; a = false; }
+	if (k8 > 0) { cout << "8 x" << k8 << " "; a = false; }
+	if (k4 > 0) { cout << "4 x" << k4 << " "; a = false; }
+	if (k2 > 0) { cout << "2 x" << k2 << " "; a = false; }
+	if (k1 > 0) { cout << "1 x" << k1 << " "; a = false; }
+	
+	if (a)
 	{
-		cin >> grade;
-
-		if (grade == 5)
-		{
-			total++;
-		}
-		if (grade == 3)
-		{
-			students3++;
-		}
-		if (grade == 2)
-		{
-			if (j == 1)
-			{
-				sub1++;
-			}
-			else if (j == 2)
-			{
-				sub2++;
-			}
-			else if (j == 3)
-			{
-				sub3++;
-			}
-		}
-
+		cout << "0 купюр";
 	}
 
-	SetColor(LightBlue, Black);
-	cout << "Трійок у студента" << " " << students3 << endl;
-	SetColor(White, Black);
+	cout << endl;
 }
-SetColor(Yellow, Black);
-cout << "----- Результат -----" << endl;
-SetColor(White, Black);
-
-cout << "Предмет 1" << " " << sub1 << endl;
-cout << "Предмет 2 " << " " << sub2 << endl;
-cout << "Предмет 3" << " " << sub3 << endl;
-SetColor(Yellow, Black);
-cout << "---------------------" << endl;
-SetColor(White, Black);
 
 
 
