@@ -654,46 +654,151 @@ int main()
 //	достаточно большое количество купюр всех достоинств.
 
 
-int n;
-cout << "Ведіть додатне число: " << endl;
-cin >> n;
+//int n;
+//cout << "Ведіть додатне число: " << endl;
+//cin >> n;
+//
+//cout << "Результат" << endl;
+//
+//for (int sum = n;  sum <= n + 10;  sum++)
+//{
+//	cout << "Сумма: " << sum << " = ";
+//
+//	int temp = sum;
+//
+//
+//	int k64 = temp / 64; temp %= 64;
+//	int k32 = temp / 32; temp %= 32;
+//	int k16 = temp / 16; temp %= 16;
+//	int k8 = temp / 8; temp %= 8;
+//	int k4 = temp / 4; temp %= 4;
+//	int k2 = temp / 2; temp %= 2;
+//	int k1 = temp / 1; 
+//	
+//
+//	bool a = true;
+//
+//	if (k64 > 0) { cout << "64 x" << k64 << " "; a = false; }
+//	if (k32 > 0) { cout << "32 x" << k32 << " "; a = false; }
+//	if (k16 > 0) { cout << "16 x" << k16 << " "; a = false; }
+//	if (k8 > 0) { cout << "8 x" << k8 << " "; a = false; }
+//	if (k4 > 0) { cout << "4 x" << k4 << " "; a = false; }
+//	if (k2 > 0) { cout << "2 x" << k2 << " "; a = false; }
+//	if (k1 > 0) { cout << "1 x" << k1 << " "; a = false; }
+//	
+//	if (a)
+//	{
+//		cout << "0 купюр";
+//	}
+//
+//	cout << endl;
+//}
 
-cout << "Результат" << endl;
+//29.05.2026 Lesson 5
 
-for (int sum = n;  sum <= n + 10;  sum++)
+const int size = 10;
+int a[size]; //= { 1,2,4,5,6 };
+int count = 0;
+int min = 0, max = 9;
+for (size_t i = 0; i < size; i++)
 {
-	cout << "Сумма: " << sum << " = ";
+	a[i] = rand() % (max - min + 1) + min;
+	cin >> a[i];
+}
+for (size_t i = 0; i < size; i++)
+{
+	cout << a[i] << " ";
+}
+cout << endl;
 
-	int temp = sum;
+const int size = 10;
+int a[size];
+int b[size];
+int max_znachenya = a[0];
+int j = 0;
+int index = 0;
+int min = 0, max = 10;
 
+for (size_t i = 0; i < size; i++)
+{
+	a[i] = rand() % (max - min + 1) + min;
+}for (size_t i = 0; i < size; i++)
+{
+	cout << a[i] << " ";
+}
+int t = a[0];
+a[0] = a[size - 1];
+a[size - 1] = t;
 
-	int k64 = temp / 64; temp %= 64;
-	int k32 = temp / 32; temp %= 32;
-	int k16 = temp / 16; temp %= 16;
-	int k8 = temp / 8; temp %= 8;
-	int k4 = temp / 4; temp %= 4;
-	int k2 = temp / 2; temp %= 2;
-	int k1 = temp / 1; 
-	
+cout << endl;
 
-	bool a = true;
+for (size_t i = 0; i < size; i++)
+{
+	cout << a[i] << " ";
+}
+cout << endl;
 
-	if (k64 > 0) { cout << "64 x" << k64 << " "; a = false; }
-	if (k32 > 0) { cout << "32 x" << k32 << " "; a = false; }
-	if (k16 > 0) { cout << "16 x" << k16 << " "; a = false; }
-	if (k8 > 0) { cout << "8 x" << k8 << " "; a = false; }
-	if (k4 > 0) { cout << "4 x" << k4 << " "; a = false; }
-	if (k2 > 0) { cout << "2 x" << k2 << " "; a = false; }
-	if (k1 > 0) { cout << "1 x" << k1 << " "; a = false; }
-	
-	if (a)
+//Бульбашкове сортування
+const int size = 10;
+int a[size];
+for (size_t i = 0; i < size - 1; i++)
+{
+	for (size_t j = 0; j < size - 1 - j; j++)
 	{
-		cout << "0 купюр";
+		if (a[j] > a[j + 1])
+		{
+			int t = a[j];
+			a[j] = a[j + 1];
+			a[j + 1] = t;
+		}
 	}
-
-	cout << endl;
+}
+for (size_t i = 0; i < size; i++)
+{
+	cout << a[i] << " ";
 }
 
+for (size_t i = 0; i < size - 1; i++)
+{
+	for (size_t j = 0; j < size - 1 - i; j++)
+	{
+		if (a[j] > a[j + 1])
+		{
+			swap(a[i], a[i + 1]);
+		}
+	}
+}
+
+//Перевернутий список
+const int size = 10;
+int a[size];
+int b[size];
+int j = 0;
+int min = 0, max = 10;
+for (size_t i = 0; i < size; i++)
+{
+	a[i] = rand() % (max - min + 1) + min;
+}
+for (size_t i = 0; i < size; i++)
+{
+	cout << a[i] << " ";
+}
+for (int i = size - 1; i >= 0;  i++)
+{
+	cout << a[i] << " ";
+}
+cout << endl;
+for (size_t i = 0; i < size / 2; i++)
+{
+	int g = a[i];
+	a[i] = a[size - 1 - i];
+	a[size - 1 - i] = g;
+}
+
+for (size_t i = 0; i < size; i++)
+{
+	cout << a[i] << " ";
+}
 
 
 
