@@ -696,106 +696,383 @@ int main()
 
 //29.05.2026 Lesson 5
 
-const int size = 10;
-int a[size]; //= { 1,2,4,5,6 };
-int count = 0;
-int min = 0, max = 9;
-for (size_t i = 0; i < size; i++)
-{
-	a[i] = rand() % (max - min + 1) + min;
-	cin >> a[i];
-}
-for (size_t i = 0; i < size; i++)
-{
-	cout << a[i] << " ";
-}
-cout << endl;
-
-const int size = 10;
-int a[size];
-int b[size];
-int max_znachenya = a[0];
-int j = 0;
-int index = 0;
-int min = 0, max = 10;
-
-for (size_t i = 0; i < size; i++)
-{
-	a[i] = rand() % (max - min + 1) + min;
-}for (size_t i = 0; i < size; i++)
-{
-	cout << a[i] << " ";
-}
-int t = a[0];
-a[0] = a[size - 1];
-a[size - 1] = t;
-
-cout << endl;
-
-for (size_t i = 0; i < size; i++)
-{
-	cout << a[i] << " ";
-}
-cout << endl;
+//const int size = 10;
+//int a[size]; //= { 1,2,4,5,6 };
+//int count = 0;
+//int min = 0, max = 9;
+//for (size_t i = 0; i < size; i++)
+//{
+//	a[i] = rand() % (max - min + 1) + min;
+//	cin >> a[i];
+//}
+//for (size_t i = 0; i < size; i++)
+//{
+//	cout << a[i] << " ";
+//}
+//cout << endl;
+//
+//const int size = 10;
+//int a[size];
+//int b[size];
+//int max_znachenya = a[0];
+//int j = 0;
+//int index = 0;
+//int min = 0, max = 10;
+//
+//for (size_t i = 0; i < size; i++)
+//{
+//	a[i] = rand() % (max - min + 1) + min;
+//}for (size_t i = 0; i < size; i++)
+//{
+//	cout << a[i] << " ";
+//}
+//int t = a[0];
+//a[0] = a[size - 1];
+//a[size - 1] = t;
+//
+//cout << endl;
+//
+//for (size_t i = 0; i < size; i++)
+//{
+//	cout << a[i] << " ";
+//}
+//cout << endl;
 
 //Бульбашкове сортування
+//const int size = 10;
+//int a[size];
+//for (size_t i = 0; i < size - 1; i++)
+//{
+//	for (size_t j = 0; j < size - 1 - i; j++)
+//	{
+//		if (a[j] > a[j + 1])
+//		{
+//			int t = a[j];
+//			a[j] = a[j + 1];
+//			a[j + 1] = t;
+//		}
+//		
+//	}
+//}
+//for (size_t i = 0; i < size; i++)
+//{
+//	cout << a[i] << " ";
+//}
+
+//for (size_t i = 0; i < size - 1; i++)
+//{
+//	for (size_t j = 0; j < size - 1 - i; j++)
+//	{
+//		if (a[j] > a[j + 1])
+//		{
+//			swap(a[i], a[i + 1]);
+//		}
+//	}
+//}
+
+//Перевернутий список
+//const int size = 10;
+//int a[size];
+//int b[size];
+//int j = 0;
+//int min = 0, max = 10;
+//for (size_t i = 0; i < size; i++)
+//{
+//	a[i] = rand() % (max - min + 1) + min;
+//}
+//for (size_t i = 0; i < size; i++)
+//{
+//	cout << a[i] << " ";
+//}
+//for (int i = size - 1; i >= 0;  i++)
+//{
+//	cout << a[i] << " ";
+//}
+//cout << endl;
+//for (size_t i = 0; i < size / 2; i++)
+//{
+//	int g = a[i];
+//	a[i] = a[size - 1 - i];
+//	a[size - 1 - i] = g;
+//}
+//
+//for (size_t i = 0; i < size; i++)
+//{
+//	cout << a[i] << " ";
+//}
+
+
+//30.05.26 Home Work 5
+//
+// 
+// Завдання 1
+//Написати програму "довідник".Створити два одновимірні масиви.
+// Один масив зберігає номери мобільних телефонів, другий — домашні телефонні номери.Реалізувати меню для користувача :
+//Відсортувати за номерами мобільних;
+//Відсортувати за домашніми номерами телефонів;
+//Вивести список користувачів;
+//Вихід.
+ 
+
+const int size = 5;
+int mobile_numbers[size] = {379836, 9287363, 93763, 38595985, 948336};
+int home_numbers[size] = {772266, 8373363, 9393, 938838, 389371};
+string  names[size] = { "Каріна", "Олег", "Дмитро", "Іван", "Марія" };
+int choice;
+while (true)
+{
+	SetColor(Yellow, Black);
+	cout << "Довідник" << endl;
+	cout << "Оберіть дію" << endl;
+	cout << "1. Відсортувати за номерами мобільних: " << endl;
+	cout << "2. Відсортувати за домашніми номерами телефонів: " << endl;
+	cout << "3. Вивести список користувачів: " << endl;
+	cout << "4. Вихід: " << endl;
+	cout << "Зробіть ваш вибір (1-4): ";
+	SetColor(White, Black);
+	cin >> choice;
+
+	if (choice == 1)
+	{
+		for (int i = size; i > 1; i--)
+		{
+			int max_index = 0;
+			for (int  j = 1; j < i; j++)
+			{
+				if (mobile_numbers[j] > mobile_numbers[max_index])
+				{
+					max_index = j;
+				}
+			}
+			if (max_index != i - 1)
+			{
+				if (max_index != 0)
+				{
+					int start = 0;
+					int end = max_index;
+					while (start < end)
+					{
+						int mob = mobile_numbers[start];
+						mobile_numbers[start] = mobile_numbers[end];
+						mobile_numbers[end] = mob;
+
+						int home = home_numbers[start];
+						home_numbers[start] = home_numbers[end];
+						home_numbers[end] = home;
+
+						string name = names[start];
+						names[start] = names[end];
+						names[end] = name;
+
+						start++;
+						end--;
+					}
+				}
+
+				int start = 0;
+				int end = i - 1;
+				while (start < end)
+				{
+					int mob = mobile_numbers[start];
+					mobile_numbers[start] = mobile_numbers[end];
+					mobile_numbers[end] = mob;
+
+					int home = home_numbers[start];
+					home_numbers[start] = home_numbers[end];
+					home_numbers[end] = home;
+
+					string name = names[start];
+					names[start] = names[end];
+					names[end] = name;
+
+					start++;
+					end--;
+				}
+			}
+		}
+		cout << "Довідник успішно відсортовано за мобільними номерами: ";
+
+		cout << "Оновлений список: ";
+		for (int i = 0; i < size; i++)
+		{
+			cout << i + 1 << ". " << names[i]
+				<< " -> Мобільний: " << mobile_numbers[i]
+				<< ", Домашній: " << home_numbers[i] << endl;
+		}
+	}
+	else if (choice == 2)
+	{
+		for (int i = size; i > 1; i--)
+		{
+			int max_index = 0;
+			for (int j = 1; j < i; j++)
+			{
+				if (home_numbers[j] > home_numbers[max_index])
+				{
+					max_index = j;
+				}
+			}
+			if (max_index != i - 1)
+			{
+				if (max_index != 0)
+				{
+					int start = 0;
+					int end = max_index;
+					while (start < end)
+					{
+						int mob = mobile_numbers[start];
+						mobile_numbers[start] = mobile_numbers[end];
+						mobile_numbers[end] = mob;
+
+						int home = home_numbers[start];
+						home_numbers[start] = home_numbers[end];
+						home_numbers[end] = home;
+
+						string name = names[start];
+						names[start] = names[end];
+						names[end] = name;
+
+						start++;
+						end--;
+					}
+				}
+
+				int start = 0;
+				int end = i - 1;
+				while (start < end)
+				{
+					int mob = mobile_numbers[start];
+					mobile_numbers[start] = mobile_numbers[end];
+					mobile_numbers[end] = mob;
+
+					int home = home_numbers[start];
+					home_numbers[start] = home_numbers[end];
+					home_numbers[end] = home;
+
+					string name = names[start];
+					names[start] = names[end];
+					names[end] = name;
+
+					start++;
+					end--;
+				}
+			}
+		}
+		cout << "Довідник успішно відсортовано за домашінми номерами: ";
+
+		cout << "Оновлений список користувачів:";
+		for (int i = 0; i < size; i++)
+		{
+			cout << i + 1 << ". " << names[i]
+				<< " -> Мобільний: " << mobile_numbers[i]
+				<< ", Домашній: " << home_numbers[i] << endl;
+		}
+	}
+	else if (choice == 3)
+	{
+		cout << "Список користувачів довідника: ";
+		for (int i = 0; i < size; i++)
+		{
+			cout << i + 1 << ". " << names[i]
+				<< "-> Мобільний: " << mobile_numbers[i]
+				<< ", Домашній: " << home_numbers[i] << endl;
+		}
+	}
+	else if (choice == 4)
+	{
+		cout << "Допобачення!";
+		break;
+	}
+	else
+	{
+		cout << "Неправильний вибір! Ведіть число від 1 до 4.";
+	}
+}
+
+
+//Завдання 2
+//Написати програму, що реалізує сортування масиву методом удосконаленого сортування 
+//бульбашковим методом.Удосконалення полягає в тому, щоб аналізувати кількість перестановок на кожному кроці, 
+//якщо ця кількість дорівнює нулю, то продовжувати сортування немає сенсу — масив відсортовано.
+
 const int size = 10;
 int a[size];
 for (size_t i = 0; i < size - 1; i++)
 {
-	for (size_t j = 0; j < size - 1 - j; j++)
+	bool swapp = false;
+	for (size_t j = 0; j < size - 1 - i; j++)
 	{
 		if (a[j] > a[j + 1])
 		{
 			int t = a[j];
 			a[j] = a[j + 1];
 			a[j + 1] = t;
+
+			swapp = true;
 		}
 	}
-}
-for (size_t i = 0; i < size; i++)
-{
-	cout << a[i] << " ";
-}
-
-for (size_t i = 0; i < size - 1; i++)
-{
-	for (size_t j = 0; j < size - 1 - i; j++)
+	if (!swapp)
 	{
-		if (a[j] > a[j + 1])
-		{
-			swap(a[i], a[i + 1]);
-		}
+		break;
 	}
 }
-
-//Перевернутий список
-const int size = 10;
-int a[size];
-int b[size];
-int j = 0;
-int min = 0, max = 10;
 for (size_t i = 0; i < size; i++)
-{
-	a[i] = rand() % (max - min + 1) + min;
-}
-for (size_t i = 0; i < size; i++)
-{
-	cout << a[i] << " ";
-}
-for (int i = size - 1; i >= 0;  i++)
 {
 	cout << a[i] << " ";
 }
 cout << endl;
-for (size_t i = 0; i < size / 2; i++)
+
+
+//Завдання 3
+//Є стопка оладок різного радіуса.Єдина операція, що проводиться з ними — між будь - якими двома 
+//вставляємо лопатку і змінюємо порядок оладок над лопаткою на зворотний.
+//Необхідно за мінімальну кількість таких операцій відсортувати знизу вгору за зменшенням радіуса.
+//
+const int  size = 10;
+int a[size] = {2, 8, 10 , 6, 4, 2 ,1};
+
+for (int i = size; i < 1; i--)
 {
-	int g = a[i];
-	a[i] = a[size - 1 - i];
-	a[size - 1 - i] = g;
+	int max_index = 0;
+	for (int j = 1; j < i; j++)
+	{
+		if (a[j] > a[max_index])
+		{
+			max_index = i;
+		}
+	}
+	if (max_index != i - 1)
+	{
+		if (max_index != 0)
+		{
+			int start = 0;
+			int end = max_index;
+			while (start < end)
+			{
+				int temp = a[start];
+				a[start] = a[end];
+				a[end] = temp;
+
+				start++;
+				end--;
+			}
+		}
+
+		int start = 0;
+		int end = i - 1;
+		while (start < end)
+		{
+			int temp = a[start];
+			a[start] = a[end];
+			a[end] = temp;
+
+			start++;
+			end--;
+		}
+	}
 }
 
-for (size_t i = 0; i < size; i++)
+for  (int i = 0; i < size; i++)
 {
 	cout << a[i] << " ";
 }
