@@ -814,180 +814,180 @@ int main()
 //Вихід.
  
 
-const int size = 5;
-int mobile_numbers[size] = {379836, 9287363, 93763, 38595985, 948336};
-int home_numbers[size] = {772266, 8373363, 9393, 938838, 389371};
-string  names[size] = { "Каріна", "Олег", "Дмитро", "Іван", "Марія" };
-int choice;
-while (true)
-{
-	SetColor(Yellow, Black);
-	cout << "Довідник" << endl;
-	cout << "Оберіть дію" << endl;
-	cout << "1. Відсортувати за номерами мобільних: " << endl;
-	cout << "2. Відсортувати за домашніми номерами телефонів: " << endl;
-	cout << "3. Вивести список користувачів: " << endl;
-	cout << "4. Вихід: " << endl;
-	cout << "Зробіть ваш вибір (1-4): ";
-	SetColor(White, Black);
-	cin >> choice;
-
-	if (choice == 1)
-	{
-		for (int i = size; i > 1; i--)
-		{
-			int max_index = 0;
-			for (int  j = 1; j < i; j++)
-			{
-				if (mobile_numbers[j] > mobile_numbers[max_index])
-				{
-					max_index = j;
-				}
-			}
-			if (max_index != i - 1)
-			{
-				if (max_index != 0)
-				{
-					int start = 0;
-					int end = max_index;
-					while (start < end)
-					{
-						int mob = mobile_numbers[start];
-						mobile_numbers[start] = mobile_numbers[end];
-						mobile_numbers[end] = mob;
-
-						int home = home_numbers[start];
-						home_numbers[start] = home_numbers[end];
-						home_numbers[end] = home;
-
-						string name = names[start];
-						names[start] = names[end];
-						names[end] = name;
-
-						start++;
-						end--;
-					}
-				}
-
-				int start = 0;
-				int end = i - 1;
-				while (start < end)
-				{
-					int mob = mobile_numbers[start];
-					mobile_numbers[start] = mobile_numbers[end];
-					mobile_numbers[end] = mob;
-
-					int home = home_numbers[start];
-					home_numbers[start] = home_numbers[end];
-					home_numbers[end] = home;
-
-					string name = names[start];
-					names[start] = names[end];
-					names[end] = name;
-
-					start++;
-					end--;
-				}
-			}
-		}
-		cout << "Довідник успішно відсортовано за мобільними номерами: ";
-
-		cout << "Оновлений список: ";
-		for (int i = 0; i < size; i++)
-		{
-			cout << i + 1 << ". " << names[i]
-				<< " -> Мобільний: " << mobile_numbers[i]
-				<< ", Домашній: " << home_numbers[i] << endl;
-		}
-	}
-	else if (choice == 2)
-	{
-		for (int i = size; i > 1; i--)
-		{
-			int max_index = 0;
-			for (int j = 1; j < i; j++)
-			{
-				if (home_numbers[j] > home_numbers[max_index])
-				{
-					max_index = j;
-				}
-			}
-			if (max_index != i - 1)
-			{
-				if (max_index != 0)
-				{
-					int start = 0;
-					int end = max_index;
-					while (start < end)
-					{
-						int mob = mobile_numbers[start];
-						mobile_numbers[start] = mobile_numbers[end];
-						mobile_numbers[end] = mob;
-
-						int home = home_numbers[start];
-						home_numbers[start] = home_numbers[end];
-						home_numbers[end] = home;
-
-						string name = names[start];
-						names[start] = names[end];
-						names[end] = name;
-
-						start++;
-						end--;
-					}
-				}
-
-				int start = 0;
-				int end = i - 1;
-				while (start < end)
-				{
-					int mob = mobile_numbers[start];
-					mobile_numbers[start] = mobile_numbers[end];
-					mobile_numbers[end] = mob;
-
-					int home = home_numbers[start];
-					home_numbers[start] = home_numbers[end];
-					home_numbers[end] = home;
-
-					string name = names[start];
-					names[start] = names[end];
-					names[end] = name;
-
-					start++;
-					end--;
-				}
-			}
-		}
-		cout << "Довідник успішно відсортовано за домашінми номерами: ";
-
-		cout << "Оновлений список користувачів:";
-		for (int i = 0; i < size; i++)
-		{
-			cout << i + 1 << ". " << names[i]
-				<< " -> Мобільний: " << mobile_numbers[i]
-				<< ", Домашній: " << home_numbers[i] << endl;
-		}
-	}
-	else if (choice == 3)
-	{
-		cout << "Список користувачів довідника: ";
-		for (int i = 0; i < size; i++)
-		{
-			cout << i + 1 << ". " << names[i]
-				<< "-> Мобільний: " << mobile_numbers[i]
-				<< ", Домашній: " << home_numbers[i] << endl;
-		}
-	}
-	else if (choice == 4)
-	{
-		cout << "Допобачення!";
-		break;
-	}
-	else
-	{
-		cout << "Неправильний вибір! Ведіть число від 1 до 4.";
-	}
-}
+//const int size = 5;
+//int mobile_numbers[size] = {379836, 9287363, 93763, 38595985, 948336};
+//int home_numbers[size] = {772266, 8373363, 9393, 938838, 389371};
+//string  names[size] = { "Каріна", "Олег", "Дмитро", "Іван", "Марія" };
+//int choice;
+//while (true)
+//{
+//	SetColor(Yellow, Black);
+//	cout << "Довідник" << endl;
+//	cout << "Оберіть дію" << endl;
+//	cout << "1. Відсортувати за номерами мобільних: " << endl;
+//	cout << "2. Відсортувати за домашніми номерами телефонів: " << endl;
+//	cout << "3. Вивести список користувачів: " << endl;
+//	cout << "4. Вихід: " << endl;
+//	cout << "Зробіть ваш вибір (1-4): ";
+//	SetColor(White, Black);
+//	cin >> choice;
+//
+//	if (choice == 1)
+//	{
+//		for (int i = size; i > 1; i--)
+//		{
+//			int max_index = 0;
+//			for (int  j = 1; j < i; j++)
+//			{
+//				if (mobile_numbers[j] > mobile_numbers[max_index])
+//				{
+//					max_index = j;
+//				}
+//			}
+//			if (max_index != i - 1)
+//			{
+//				if (max_index != 0)
+//				{
+//					int start = 0;
+//					int end = max_index;
+//					while (start < end)
+//					{
+//						int mob = mobile_numbers[start];
+//						mobile_numbers[start] = mobile_numbers[end];
+//						mobile_numbers[end] = mob;
+//
+//						int home = home_numbers[start];
+//						home_numbers[start] = home_numbers[end];
+//						home_numbers[end] = home;
+//
+//						string name = names[start];
+//						names[start] = names[end];
+//						names[end] = name;
+//
+//						start++;
+//						end--;
+//					}
+//				}
+//
+//				int start = 0;
+//				int end = i - 1;
+//				while (start < end)
+//				{
+//					int mob = mobile_numbers[start];
+//					mobile_numbers[start] = mobile_numbers[end];
+//					mobile_numbers[end] = mob;
+//
+//					int home = home_numbers[start];
+//					home_numbers[start] = home_numbers[end];
+//					home_numbers[end] = home;
+//
+//					string name = names[start];
+//					names[start] = names[end];
+//					names[end] = name;
+//
+//					start++;
+//					end--;
+//				}
+//			}
+//		}
+//		cout << "Довідник успішно відсортовано за мобільними номерами: ";
+//
+//		cout << "Оновлений список: ";
+//		for (int i = 0; i < size; i++)
+//		{
+//			cout << i + 1 << ". " << names[i]
+//				<< " -> Мобільний: " << mobile_numbers[i]
+//				<< ", Домашній: " << home_numbers[i] << endl;
+//		}
+//	}
+//	else if (choice == 2)
+//	{
+//		for (int i = size; i > 1; i--)
+//		{
+//			int max_index = 0;
+//			for (int j = 1; j < i; j++)
+//			{
+//				if (home_numbers[j] > home_numbers[max_index])
+//				{
+//					max_index = j;
+//				}
+//			}
+//			if (max_index != i - 1)
+//			{
+//				if (max_index != 0)
+//				{
+//					int start = 0;
+//					int end = max_index;
+//					while (start < end)
+//					{
+//						int mob = mobile_numbers[start];
+//						mobile_numbers[start] = mobile_numbers[end];
+//						mobile_numbers[end] = mob;
+//
+//						int home = home_numbers[start];
+//						home_numbers[start] = home_numbers[end];
+//						home_numbers[end] = home;
+//
+//						string name = names[start];
+//						names[start] = names[end];
+//						names[end] = name;
+//
+//						start++;
+//						end--;
+//					}
+//				}
+//
+//				int start = 0;
+//				int end = i - 1;
+//				while (start < end)
+//				{
+//					int mob = mobile_numbers[start];
+//					mobile_numbers[start] = mobile_numbers[end];
+//					mobile_numbers[end] = mob;
+//
+//					int home = home_numbers[start];
+//					home_numbers[start] = home_numbers[end];
+//					home_numbers[end] = home;
+//
+//					string name = names[start];
+//					names[start] = names[end];
+//					names[end] = name;
+//
+//					start++;
+//					end--;
+//				}
+//			}
+//		}
+//		cout << "Довідник успішно відсортовано за домашінми номерами: ";
+//
+//		cout << "Оновлений список користувачів:";
+//		for (int i = 0; i < size; i++)
+//		{
+//			cout << i + 1 << ". " << names[i]
+//				<< " -> Мобільний: " << mobile_numbers[i]
+//				<< ", Домашній: " << home_numbers[i] << endl;
+//		}
+//	}
+//	else if (choice == 3)
+//	{
+//		cout << "Список користувачів довідника: ";
+//		for (int i = 0; i < size; i++)
+//		{
+//			cout << i + 1 << ". " << names[i]
+//				<< "-> Мобільний: " << mobile_numbers[i]
+//				<< ", Домашній: " << home_numbers[i] << endl;
+//		}
+//	}
+//	else if (choice == 4)
+//	{
+//		cout << "Допобачення!";
+//		break;
+//	}
+//	else
+//	{
+//		cout << "Неправильний вибір! Ведіть число від 1 до 4.";
+//	}
+//}
 
 
 //Завдання 2
@@ -995,32 +995,32 @@ while (true)
 //бульбашковим методом.Удосконалення полягає в тому, щоб аналізувати кількість перестановок на кожному кроці, 
 //якщо ця кількість дорівнює нулю, то продовжувати сортування немає сенсу — масив відсортовано.
 
-const int size = 10;
-int a[size];
-for (size_t i = 0; i < size - 1; i++)
-{
-	bool swapp = false;
-	for (size_t j = 0; j < size - 1 - i; j++)
-	{
-		if (a[j] > a[j + 1])
-		{
-			int t = a[j];
-			a[j] = a[j + 1];
-			a[j + 1] = t;
-
-			swapp = true;
-		}
-	}
-	if (!swapp)
-	{
-		break;
-	}
-}
-for (size_t i = 0; i < size; i++)
-{
-	cout << a[i] << " ";
-}
-cout << endl;
+//const int size = 10;
+//int a[size];
+//for (size_t i = 0; i < size - 1; i++)
+//{
+//	bool swapp = false;
+//	for (size_t j = 0; j < size - 1 - i; j++)
+//	{
+//		if (a[j] > a[j + 1])
+//		{
+//			int t = a[j];
+//			a[j] = a[j + 1];
+//			a[j + 1] = t;
+//
+//			swapp = true;
+//		}
+//	}
+//	if (!swapp)
+//	{
+//		break;
+//	}
+//}
+//for (size_t i = 0; i < size; i++)
+//{
+//	cout << a[i] << " ";
+//}
+//cout << endl;
 
 
 //Завдання 3
@@ -1028,56 +1028,170 @@ cout << endl;
 //вставляємо лопатку і змінюємо порядок оладок над лопаткою на зворотний.
 //Необхідно за мінімальну кількість таких операцій відсортувати знизу вгору за зменшенням радіуса.
 //
-const int  size = 10;
-int a[size] = {2, 8, 10 , 6, 4, 2 ,1};
+//const int  size = 10;
+//int a[size] = {2, 8, 10 , 6, 4, 2 ,1};
+//
+//for (int i = size; i < 1; i--)
+//{
+//	int max_index = 0;
+//	for (int j = 1; j < i; j++)
+//	{
+//		if (a[j] > a[max_index])
+//		{
+//			max_index = i;
+//		}
+//	}
+//	if (max_index != i - 1)
+//	{
+//		if (max_index != 0)
+//		{
+//			int start = 0;
+//			int end = max_index;
+//			while (start < end)
+//			{
+//				int temp = a[start];
+//				a[start] = a[end];
+//				a[end] = temp;
+//
+//				start++;
+//				end--;
+//			}
+//		}
+//
+//		int start = 0;
+//		int end = i - 1;
+//		while (start < end)
+//		{
+//			int temp = a[start];
+//			a[start] = a[end];
+//			a[end] = temp;
+//
+//			start++;
+//			end--;
+//		}
+//	}
+//}
+//
+//for  (int i = 0; i < size; i++)
+//{
+//	cout << a[i] << " ";
+//}
 
-for (int i = size; i < 1; i--)
-{
-	int max_index = 0;
-	for (int j = 1; j < i; j++)
-	{
-		if (a[j] > a[max_index])
-		{
-			max_index = i;
-		}
-	}
-	if (max_index != i - 1)
-	{
-		if (max_index != 0)
-		{
-			int start = 0;
-			int end = max_index;
-			while (start < end)
-			{
-				int temp = a[start];
-				a[start] = a[end];
-				a[end] = temp;
+/// 01.06.2026 Lesson 6
 
-				start++;
-				end--;
-			}
-		}
+//int min = 1, max = 100;
+//const int row = 5, col = 5;
+//int a[row][col];
 
-		int start = 0;
-		int end = i - 1;
-		while (start < end)
-		{
-			int temp = a[start];
-			a[start] = a[end];
-			a[end] = temp;
+//for (size_t i = 0; i < row; i++)
+//{
+//	for (size_t j = 0; j < col; j++)
+//	{
+//		a[i][j] = rand() % (max - min + 1) + min;
+//	}
+//}
+//
+//for (size_t i = 0; i < row; i++)
+//{
+//	for (size_t j = 0; j < col; j++)
+//	{
+//		bool flag = false;
+//		while (!flag)
+//		{
+//			int r = rand() % (max - min + 1) + min;
+//			for (size_t k = 0; k < row; k++)
+//			{
+//				for (size_t m = 0; m < col; m++)
+//				{
+//					if (a[k][m] == r)
+//					{
+//						flag = true;
+//					}
+//				}
+//			}
+//			if (!flag)
+//			{
+//				a[i][j] = r;
+//				break;
+//			}
+//			flag = false;
+//		}
+//	}
+//}
+//
+//
+//
+//for (size_t i = 0; i < row; i++)
+//{
+//	for (size_t j = 0; j < col; j++)
+//	{
+//		cout << setw(4) << a[i][j];
+//	}
+//	cout << endl;
+//}
 
-			start++;
-			end--;
-		}
-	}
-}
 
-for  (int i = 0; i < size; i++)
-{
-	cout << a[i] << " ";
-}
+//int maxV = a[0][0];
+//int minV = a[0][0];
+//int iMin = 0, iMax = 0, jMin = 0, jMax = 0;
+//for (size_t i = 0; i < row; i++)
+//{
+//	for (size_t j = 0; j < col; j++)
+//	{
+//		if (a[i][j] > maxV)
+//		{
+//			maxV = a[i][j];
+//			iMax = i;
+//			jMax = j;
+//		}
+//		if (a[i][j] < minV)
+//		{
+//			minV = a[i][j];
+//			iMin = i;
+//			jMin = j;
+//		}
+//	}
+//}
 
 
+//int s = 0;
+//for (size_t i = iMin; i <= iMax; i++)
+//{
+//	for (size_t j = 0; j < col; j++)
+//	{
+//		if (i == iMin && j > jMin || i == iMax && j < jMax || i > iMin && i < iMax)
+//		{
+//			s += a[i][j];
+//		}
+//	}
+//}
+
+//cout << s << endl;
+
+
+//for (size_t i = 0; i < row; i++)
+//{
+//	for (size_t j = 0; j < col; j++)
+//	{
+//		//if (a[i][j] == maxV)
+//		//{
+//		//	SetColor(Red, Black);
+//		//}
+//		//else if (a[i][j] == minV)
+//		//{
+//		//	SetColor(Green, Black);
+//		//}
+//		//else
+//		//{
+//		//	SetColor(White, Black);
+//		//}
+
+//		SetColor((a[i][j] == maxV) ? Red : (a[i][j] == minV) ? Green : White, Black);
+
+//		cout << a[i][j] << " ";
+//	}
+//	cout << endl;
+//}
 
 	return 0;
 }
