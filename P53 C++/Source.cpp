@@ -2,18 +2,9 @@
 #include<Windows.h>
 #include<iomanip>
 
+#include"myFunc.h"
+
 using namespace std;
-
-enum Color
-{
-	Black = 0, Blue = 1, Green = 2, Cyan = 3, Red = 4, Magenta = 5, Brown = 6, LightGray = 7, DarkGray = 8,
-	LightBlue = 9, LightGreen = 10, LightCyan = 11, LightRed = 12, LightMagenta = 13, Yellow = 14, White = 15
-};
-
-void SetColor(int text, int background)
-{
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), (WORD)((background << 4) | text));
-}
 
 int main()
 {
@@ -23,6 +14,36 @@ int main()
 
 	srand(time(0));
 
+	/// 05.06.2026
+
+	// arr[..][..][metagalaxy][galaxy][system][planet][continent][country][city][street][house][number]
+
+	//starLine();
+	//starLine(30);
+	//starLine(20, '#');
+
+
+	//cout << avg3(3, 4, 6) << endl;
+
+	//size array
+	//const int size = 20;
+	//int arr[size];
+	//setArray(arr, size);
+	//printArray(arr, size);
+	////bublleSort(arr, size);
+	////printArray(arr, size);
+	//cout << findArray(arr, size, 110) << endl;
+
+	//int ind;
+
+	//cout << ind << endl;
+	//cout << arr[ind] << endl;
+
+	//int max;
+
+
+	//f(1010101);
+	//ff(87) // 100011101
 
 	//cout << "Hello World!" << endl;
 	//cout << "My name Ruslan" << endl;
@@ -1203,35 +1224,35 @@ int main()
 //(тобто 6 для нашого прикладу); третій 
 //елемент масиву — попередній елемент, помножений на 2 (тобто 6 * 2 = 12 для нашого прикладу).Створений масив вивести на екран.
 
-
-const int row = 5, col = 5;
-
-long long a[row][col];
-
-long long start;
-
-cout << "Ведіть початкове число: ";
-cin >> start;
-
-long long value = start;
-for (int i = 0; i < row; i++)
-{
-	for (int j = 0; j < col; ++j)
-	{
-		a[i][j] = value;
-		value *= 2;
-	}
-}
-
-
-for (int i = 0; i < row; ++i)
-{
-	for (int j = 0; j < col; ++j)
-	{
-		cout << setw(12) << a[i][j] << " ";
-	}
-	cout << endl;
-}
+//
+//const int row = 5, col = 5;
+//
+//long long a[row][col];
+//
+//long long start;
+//
+//cout << "Ведіть початкове число: ";
+//cin >> start;
+//
+//long long value = start;
+//for (int i = 0; i < row; i++)
+//{
+//	for (int j = 0; j < col; ++j)
+//	{
+//		a[i][j] = value;
+//		value *= 2;
+//	}
+//}
+//
+//
+//for (int i = 0; i < row; ++i)
+//{
+//	for (int j = 0; j < col; ++j)
+//	{
+//		cout << setw(12) << a[i][j] << " ";
+//	}
+//	cout << endl;
+//}
 
 //Завдання 2
 //Напишіть програму, яка створює двовимірний масив і заповнює його за таким принципом : користувач вводить число(наприклад, 3); 
@@ -1239,35 +1260,35 @@ for (int i = 0; i < row; ++i)
 //третій елемент масиву — попередній елемент + 1 (тобто 5 для нашого прикладу).Створений масив вивести на екран.
 
 
-
-const int row = 5, col = 5;
-
-long long a[row][col];
-
-long long start;
-
-cout << "Ведіть початкове число: ";
-cin >> start;
-
-long long value = start;
-for (int i = 0; i < row; i++)
-{
-	for (int j = 0; j < col; ++j)
-	{
-		a[i][j] = value;
-		value++;
-	}
-}
-
-
-for (int i = 0; i < row; ++i)
-{
-	for (int j = 0; j < col; ++j)
-	{
-		cout << setw(5) << a[i][j] << " ";
-	}
-	cout << endl;
-}
+//
+//const int row = 5, col = 5;
+//
+//long long a[row][col];
+//
+//long long start;
+//
+//cout << "Ведіть початкове число: ";
+//cin >> start;
+//
+//long long value = start;
+//for (int i = 0; i < row; i++)
+//{
+//	for (int j = 0; j < col; ++j)
+//	{
+//		a[i][j] = value;
+//		value++;
+//	}
+//}
+//
+//
+//for (int i = 0; i < row; ++i)
+//{
+//	for (int j = 0; j < col; ++j)
+//	{
+//		cout << setw(5) << a[i][j] << " ";
+//	}
+//	cout << endl;
+//}
 
 
 
