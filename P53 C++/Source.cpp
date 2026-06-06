@@ -14,6 +14,60 @@ int main()
 
 	srand(time(0));
 
+	//06.06.2026 Home Work 7
+
+	//Завдання 1
+	//Написати функцію, що реалізує алгоритм лінійного пошуку заданого ключа в одновимірному масиві.
+	
+	int key = 5;
+	const int size = 20;
+	int arr[size];
+	setArray(arr, size);
+	printArray(arr, size);
+	
+	int result = linearSearch(arr, size, key);
+	if (result != -1)
+	{
+		cout << result << endl;
+	}
+	else
+	{
+		cout << "Елемент не знайдено";
+	}
+
+
+	//Завдання 2
+	//Написати функцію, що реалізує алгоритм бінарного пошуку заданого ключа в одновимірному масиві.
+	int key = 5;
+	const int size = 20;
+	int arr[size];
+
+	setArray(arr, size);
+	printArray(arr, size);
+	bublleSort(arr, size);
+	printArray(arr, size);
+
+	int result = binarySearch(arr, size, key);
+
+	if (result != -1)
+	{
+		cout << result;
+	}
+	else
+	{
+		cout << "Елемент не знайдено";
+	}
+
+	//Завдання 3
+	//Написати функцію для переведення числа, записаного в двійковому вигляді, в десяткове подання.
+
+
+	long long binarynum = 101101;
+	cout << "Двійкове: " << binarynum << " В десяткове" << binarytoDecimal(binarynum) << endl;
+
+	int decnum = 45;
+	cout << "Десяткове: " << decnum << " в двійкове" << decimalTobinary(decnum) << endl;
+
 	/// 05.06.2026
 
 	// arr[..][..][metagalaxy][galaxy][system][planet][continent][country][city][street][house][number]

@@ -77,3 +77,71 @@ int findArray(int arr[], int size, int key)
 
 	return -1;
 }
+
+
+int linearSearch(int arr[], int size, int key)
+{
+	for (int i = 0; i < size; ++i)
+	{
+		if (arr[i] == key)
+		{
+			return i;
+		}
+	}
+	return -1;
+}
+
+int binarySearch(int arr[], int size, int key)
+{
+	int left = 0;
+	int right = size - 1;
+
+	while (left <= right)
+	{
+		int midle = left + (right - left) / 2;
+		if (arr[midle] == key)
+		{
+			return midle;
+		}
+		if (arr[midle] < key)
+		{
+			left = midle + 1;
+		}
+		else
+		{
+			right = midle - 1;
+		}
+	}
+	return -1;
+}
+
+int binarytoDecimal(long long binary)
+{
+	int decimal = 0;
+	int power = 0;
+
+	while (binary > 0)
+	{
+		int lastDigit = binary % 10;
+		decimal += lastDigit * pow(2, power);
+		binary /= 10;
+		power++;
+	}
+	return decimal;
+}
+
+
+long long decimalTobinary(int decimal)
+{
+	long long binary = 0;
+	long long place = 1;
+
+	while (decimal > 0)
+	{
+		int temp = decimal % 2;
+		binary += temp * place;
+		decimal /= 2;
+		place *= 10;
+	}
+	return binary;
+}
