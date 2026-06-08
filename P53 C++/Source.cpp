@@ -14,59 +14,88 @@ int main()
 
 	srand(time(0));
 
+	/// 08.06.2026 Lesson 8
+
+
+	//rec();
+
+
+	const int size = 10;
+	float arr[size];
+	setArray<float>(arr, size);
+	printArray(arr, size);
+	//cout << maxValueArray(arr, size) << endl;
+
+	fff<int>();
+
+	//cout << Sum(3, 5.5) << endl;
+	//cout << Sum(3.5, 5) << endl;
+	//cout << Sum(3.5, 5.5) << endl;
+	//cout << Sum(3, 'a', 2.5) << endl;
+
+	//auto a = 10 + 3.5;
+
+	//int c = 9;
+
+	//a = 3.5;
+
+	//decltype(a + c) b;
+
+	//auto m = 'c';
+
 	//06.06.2026 Home Work 7
 
 	//Завдання 1
 	//Написати функцію, що реалізує алгоритм лінійного пошуку заданого ключа в одновимірному масиві.
 	
-	int key = 5;
-	const int size = 20;
-	int arr[size];
-	setArray(arr, size);
-	printArray(arr, size);
-	
-	int result = linearSearch(arr, size, key);
-	if (result != -1)
-	{
-		cout << result << endl;
-	}
-	else
-	{
-		cout << "Елемент не знайдено";
-	}
+	//int key = 5;
+	//const int size = 20;
+	//int arr[size];
+	//setArray(arr, size);
+	//printArray(arr, size);
+	//
+	//int result = linearSearch(arr, size, key);
+	//if (result != -1)
+	//{
+	//	cout << result << endl;
+	//}
+	//else
+	//{
+	//	cout << "Елемент не знайдено";
+	//}
 
 
-	//Завдання 2
-	//Написати функцію, що реалізує алгоритм бінарного пошуку заданого ключа в одновимірному масиві.
-	int key = 5;
-	const int size = 20;
-	int arr[size];
+	////Завдання 2
+	////Написати функцію, що реалізує алгоритм бінарного пошуку заданого ключа в одновимірному масиві.
+	//int key = 5;
+	//const int size = 20;
+	//int arr[size];
 
-	setArray(arr, size);
-	printArray(arr, size);
-	bublleSort(arr, size);
-	printArray(arr, size);
+	//setArray(arr, size);
+	//printArray(arr, size);
+	//bublleSort(arr, size);
+	//printArray(arr, size);
 
-	int result = binarySearch(arr, size, key);
+	//int result = binarySearch(arr, size, key);
 
-	if (result != -1)
-	{
-		cout << result;
-	}
-	else
-	{
-		cout << "Елемент не знайдено";
-	}
+	//if (result != -1)
+	//{
+	//	cout << result;
+	//}
+	//else
+	//{
+	//	cout << "Елемент не знайдено";
+	//}
 
-	//Завдання 3
-	//Написати функцію для переведення числа, записаного в двійковому вигляді, в десяткове подання.
+	////Завдання 3
+	////Написати функцію для переведення числа, записаного в двійковому вигляді, в десяткове подання.
 
 
-	long long binarynum = 101101;
-	cout << "Двійкове: " << binarynum << " В десяткове" << binarytoDecimal(binarynum) << endl;
+	//long long binarynum = 101101;
+	//cout << "Двійкове: " << binarynum << " В десяткове" << binarytoDecimal(binarynum) << endl;
 
-	int decnum = 45;
-	cout << "Десяткове: " << decnum << " в двійкове" << decimalTobinary(decnum) << endl;
+	//int decnum = 45;
+	//cout << "Десяткове: " << decnum << " в двійкове" << decimalTobinary(decnum) << endl;
 
 	/// 05.06.2026
 

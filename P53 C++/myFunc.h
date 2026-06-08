@@ -31,20 +31,15 @@ void starLine(int size = 10, char symbol = '*')
 }
 
 
-float avg3(int a, int b, int c)
+template<class T>
+double avg3(T a, T b, T c)
 {
-	return (a + b + c) / 3.f;
+	return (a + b + c) / 3.;
 }
 
-void setArray(int arr[], int size, int minValue = 0, int maxValue = 9)
-{
-	for (size_t i = 0; i < size; i++)
-	{
-		arr[i] = rand() % (maxValue - minValue + 1) + minValue;
-	}
-}
 
-void printArray(int arr[], int size)
+template<class T>
+void printArray(T arr[], int size)
 {
 	for (size_t i = 0; i < size; i++)
 	{
@@ -53,7 +48,29 @@ void printArray(int arr[], int size)
 	cout << endl;
 }
 
-void bublleSort(int arr[], int size)
+template<class T>
+void setArray(T arr[], int size, T minValue = 0, T maxValue = 9)
+{
+	cout << "template setArray" << endl;
+	for (size_t i = 0; i < size; i++)
+	{
+		arr[i] = T();
+	}
+}
+
+
+void setArray(int arr[], int size, int minValue = 0, int maxValue = 9)
+{
+	cout << "int setArray" << endl;
+	for (size_t i = 0; i < size; i++)
+	{
+		arr[i] = rand() % (maxValue - minValue + 1) + minValue;
+	}
+}
+
+
+template<class T>
+void bublleSort(T arr[], int size)
 {
 	for (size_t i = 0; i < size - 1; i++)
 	{
@@ -65,7 +82,8 @@ void bublleSort(int arr[], int size)
 	}
 }
 
-int findArray(int arr[], int size, int key)
+template<class T>
+int findArray(T arr[], int size, T key)
 {
 	for (size_t i = 0; i < size; i++)
 	{
@@ -77,6 +95,7 @@ int findArray(int arr[], int size, int key)
 
 	return -1;
 }
+
 
 
 int linearSearch(int arr[], int size, int key)
@@ -144,4 +163,58 @@ long long decimalTobinary(int decimal)
 		place *= 10;
 	}
 	return binary;
+}
+
+template<class T>
+T maxValueArray(T arr[], int size)
+{
+	T maxValue = arr[0];
+	for (size_t i = 0; i < size; i++)
+	{
+		if (arr[i] > maxValue)
+		{
+			maxValue = arr[i];
+		}
+	}
+	return maxValue;
+}
+
+template<class T>
+int countValueArray(T arr[], int size, T key)
+{
+	int count = 0;
+	for (size_t i = 0; i < size; i++)
+	{
+		if (arr[i] == key)
+		{
+			count++;
+		}
+	}
+	return count;
+}
+
+template<class T1, class T2, class T3>
+auto Sum(T1 a, T2 b, T3 c) -> decltype(a + b)
+{
+	return a + b + c;
+}
+
+
+void rec()
+{
+	static int a = 0;
+	a++;
+	rec();
+}
+
+void printArray2D(int arr[10][10], int row, int col)
+{
+
+}
+
+template<class T>
+T fff()
+{
+	T a = 9;
+	//
 }
