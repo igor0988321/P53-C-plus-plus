@@ -14,19 +14,39 @@ int main()
 
 	srand(time(0));
 
+	//09.06.2026 Home Work 8
+	// 
+	// 
+	// Завдання 2
+	//Написати функцію, яка сортує першу половину масиву за спаданням, 
+	// а другу — за зростанням, використовуючи сортування простими вставками.
+	// 
+	sortHalf(arr, size);
+	// Завдання 1
+	//Дано масив чисел розмірністю 10 елементів.Написати функцію, яка сортує масив за зростанням або за спаданням, 
+	//	залежно від третього параметра функції.Якщо він дорівнює true, сортування йде за спаданням, якщо false — 
+	//	за зростанням.Перші 2 параметри функції — це масив і його розмір, третій параметр за замовчуванням дорівнює false.
+	
+	sortArray_2(arr, size, true)
+
+	//Хрестики нулики
+
+	playGame();
+
+
 	/// 08.06.2026 Lesson 8
 
 
 	//rec();
 
 
-	const int size = 10;
-	float arr[size];
-	setArray<float>(arr, size);
-	printArray(arr, size);
+	//const int size = 10;
+	//float arr[size];
+	//setArray<float>(arr, size);
+	//printArray(arr, size);
 	//cout << maxValueArray(arr, size) << endl;
 
-	fff<int>();
+	//fff<int>();
 
 	//cout << Sum(3, 5.5) << endl;
 	//cout << Sum(3.5, 5) << endl;

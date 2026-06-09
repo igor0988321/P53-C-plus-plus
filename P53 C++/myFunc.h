@@ -218,3 +218,166 @@ T fff()
 	T a = 9;
 	//
 }
+
+const char Empty = ' ';
+const char player_1 = 'X';
+const char player_2 = 'O';
+
+void clearscreen()
+{
+	system("cls");
+}
+
+void drawBoard(const char board[3][3])
+{
+	clearscreen();
+	cout << "\n      Хрестики - нулики \n\n";
+	cout << "        1     2     3 \n";
+	cout << "     +-----+-----+-----+\n";
+	for (int i = 0; i < 3; ++i)
+	{
+		cout << "  " << i + 1 << "  |  " << board[i][0]
+			<< "  |  " << board[i][1] << "  |  " << board[i][2] << "  |\n";
+		cout << "     +-----+-----+-----+\n";
+	}
+	cout << endl;
+}
+
+bool checkWin(const char board[3][3], char player)
+{
+	for (int i = 0; i < 3; i++)
+	{
+		if (board[i][0] == player && board[i][1] == player && board[i][2] == player) return true;
+		if (board[0][i] == player && board[1][i] == player && board[2][i] == player) return true;
+	}
+	if (board[0][0] == player && board[1][1] == player && board[2][2] == player) return true;
+	if (board[0][2] == player && board[1][1] == player && board[2][0] == player) return true;
+
+	return false;
+}
+
+bool check(const char board[3][3])
+{
+	for (int i = 0; i < 3; i++)
+	{
+		for (int j = 0; j < 3; j++)
+		{
+			if (board[i][j] == Empty) return false;
+		}
+	}
+	return true;
+}
+
+void move(char board[3][3], char player)
+{
+	int row, col;
+	while (true)
+	{
+		cout << "Гравець " << player << ", ваш хід. \n";
+		cout << "Веди номер рядка та стовпчика: ";
+		cin >> row >> col;
+
+		row--;
+		col--;
+
+		if (row >= 0 && row < 3 && col >= 0 && col < 3 && board[row][col] == Empty)
+		{
+			board[row][col] = player;
+			break;
+		}
+		else
+		{
+			cout << "Не коректний хід";
+		}
+	}
+}
+
+void playGame()
+{
+	char board[3][3];
+
+	for (int i = 0; i < 3; ++i)
+	{
+		for (int j = 0; j < 3; j++)
+		{
+			board[i][j] = Empty;
+		}
+	}
+	
+	char player = player_1;
+	bool gameOver = false;
+
+	while (!gameOver)
+	{
+		drawBoard(board);
+		move(board, player);
+
+		if (checkWin(board, player))
+		{
+			drawBoard(board);
+			cout << "Вітаємо! Гравцеь " << player << "переміг";
+			gameOver = true;
+		}
+		else if (check(board))
+		{
+			drawBoard(board);
+			cout << "Нічия!";
+			gameOver = true;
+		}
+		else
+		{
+			if (player == player_1) {
+				player = player_2;
+			}
+			else {
+				player = player_1;
+			}
+		}
+	}
+
+}
+
+
+void sortArray_2(int arr[], int size, bool desc = false)
+{
+	for (int i = 0; i < size - 1; ++i)
+	{
+		for (int j = 0; j < size - i - 1; ++j)
+		{
+			if ((desc && arr[j] < arr[j + 1]) || (!desc && arr[j] > arr[j + 1])) {
+				swap(arr[j], arr[j + 1]);
+
+			}
+		}
+	}
+}
+
+void sortHals(int arr[], int size)
+{
+	int mid = size / 2;
+	for (int i = 1; i < mid; ++i)
+	{
+		int key = arr[i];
+		int j = i - 1;
+
+		while (j >= 0 && arr[j] < key)
+		{
+			arr[j + 1] = arr[j];
+			j--;
+		}
+		arr[j + 1] = key;
+	}
+
+	for (int i = mid + 1; i < size; ++i)
+	{
+		int key = arr[i];
+		int j = i - 1;
+
+		while (j >= mid && arr[j] > key)
+		{
+			arr[j + 1] = arr[j];
+			j--;
+		}
+		arr[j + 1] = key;
+	}
+}
