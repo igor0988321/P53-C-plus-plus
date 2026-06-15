@@ -13,6 +13,130 @@ int main()
 
 
 	srand(time(0));
+	/// 15.06.2026 Lesson 9
+
+	//int a = 5;
+	//cout << a << endl;
+	//cout << typeid(a).name() << endl;
+	//cout << &a << endl;
+	//cout << sizeof(a) << endl;
+
+	//int* p = &a;
+	//cout << p << endl;
+	//cout << *p << endl;
+	//*p = 999;
+	//cout << a << endl;
+
+	//float f = 5.35;
+	//float* p1 = &f;
+
+
+	// + - ++ --
+
+	//p += 1; // p + n = p + n * type;
+	//cout << p << endl;
+	//cout << *p << endl;
+
+	//int arr[4] = { 1,2,32,4 };
+	//for (size_t i = 0; i < 4; i++)
+	//{
+	//	cout << *(arr + i) << endl; // *(arr + i) = arr[i]
+	//}
+
+	//cout << *(arr + 0)<< endl;
+	//cout << *(arr + 1) << endl;
+	//cout << *(arr + 2) << endl;
+	//cout << *(arr + 3) << endl;
+
+	// > < >= <= == != 
+
+	//int b = -5;
+	//int* pb = &b;
+	//cout << pb << endl;
+	//cout << (p == pb) << endl;
+
+	//int c = 0;
+	//int* pc = nullptr;
+	//cout << c << endl;
+	//cout << pc << endl;
+	//if (pc == &b)
+	//{
+	//	pc = &c;
+	//}
+
+
+	//int arr[] = { 1,2,32,4 };
+
+	//for (int* i = arr; i  != arr+4; i++)
+	//{
+	//	cout << *i << " ";
+	//}
+
+	//int size;
+	//cin >> size;
+	//float* p = new float[size];
+	//setArray(p, size);
+	//printArray(p, size);
+
+	//p = addValueArray(p, &size, 999.f);
+
+	//printArray(p, size);
+
+	//p = delValueArray(p, &size);
+
+	//printArray(p, size);
+
+	//
+	//int* temp = new int[size + 1];
+	//for (size_t i = 0; i < size; i++)
+	//{
+	//	temp[i] = p[i];
+	//}
+	//temp[size] = 999;
+	//delete[] p;
+	//p = temp;
+	//size++;
+
+	//printArray(p, size);
+
+	//delete[] p;
+
+
+
+	//int a = 5;
+	//inc(&a);
+	//cout << a << endl;
+
+
+	/// 08.06.2026
+
+
+	//rec();
+
+
+	//const int size = 10;
+	//float arr[size];
+	//setArray<float>(arr, size);
+	//printArray(arr, size);
+	////cout << maxValueArray(arr, size) << endl;
+
+	//fff<int>();
+
+	//cout << Sum(3, 5.5) << endl;
+	//cout << Sum(3.5, 5) << endl;
+	//cout << Sum(3.5, 5.5) << endl;
+	//cout << Sum(3, 'a', 2.5) << endl;
+
+	//auto a = 10 + 3.5;
+
+	//int c = 9;
+
+	//a = 3.5;
+
+	//decltype(a + c) b;
+
+	//auto m = 'c';
+
 
 	//09.06.2026 Home Work 8
 	// 
@@ -21,17 +145,17 @@ int main()
 	//Написати функцію, яка сортує першу половину масиву за спаданням, 
 	// а другу — за зростанням, використовуючи сортування простими вставками.
 	// 
-	sortHalf(arr, size);
+	//sortHalf(arr, size);
 	// Завдання 1
 	//Дано масив чисел розмірністю 10 елементів.Написати функцію, яка сортує масив за зростанням або за спаданням, 
 	//	залежно від третього параметра функції.Якщо він дорівнює true, сортування йде за спаданням, якщо false — 
 	//	за зростанням.Перші 2 параметри функції — це масив і його розмір, третій параметр за замовчуванням дорівнює false.
 	
-	sortArray_2(arr, size, true)
+	//sortArray_2(arr, size, true)
 
 	//Хрестики нулики
 
-	playGame();
+	//playGame();
 
 
 	/// 08.06.2026 Lesson 8

@@ -381,3 +381,22 @@ void sortHals(int arr[], int size)
 		arr[j + 1] = key;
 	}
 }
+
+void inc(int* a)
+{
+	++(*a);
+}
+
+template<class T>
+T* addValueArray(T* arr, int* size, T value)
+{
+	T* temp = new T[*size + 1];
+	for (size_t i = 0; i < *size; i++)
+	{
+		temp[i] = arr[i];
+	}
+	temp[*size] = value;
+	delete[] arr;
+	(*size)++;
+	return temp;
+}
