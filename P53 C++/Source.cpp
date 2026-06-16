@@ -13,6 +13,204 @@ int main()
 
 
 	srand(time(0));
+
+	//16.06.2026 Home Work 9
+
+	//Завдання 1
+	//	Дано два масиви : А[M] і B[N](M і N вводяться з клавіатури).Необхідно створити третій масив 
+	//	мінімально можливого розміру, у якому потрібно зібрати елементи масиву A, що не включаються в масив B, без повторень.
+
+	int m, n;
+	cout << "Ведіть розмір масиву M: ";
+	cin >> m;
+	cout << "Ведіть розмір масиву N: ";
+	cin >> n;
+
+	int* a = new int[m];
+	int* b = new int[n];
+
+	cout << "Ведіть елементи масиву A: " << endl;
+	for (int i = 0; i < m; i++)
+	{
+		cin >> a[i];
+	}
+	cout << "Ведіть елементи масиву B: " << endl;
+	for (int i = 0; i < n; i++)
+	{
+		cin >> b[i];
+	}
+
+	int* temp = new int[m];
+	int size = 0;
+
+	for (int i = 0; i < m; i++)
+	{
+		bool in = false;
+		for (int j = 0; j < n; j++)
+		{
+			if (a[i] == b[j])
+			{
+				in = true;
+				break;
+			}
+		}
+		if (!in)
+		{
+			bool all = false;
+			for (int k = 0; k < size; k++)
+			{
+				if (a[i] == temp[k])
+				{
+					all = true;
+					break;
+				}
+			}
+			if (!all)
+			{
+				temp[size] = a[i];
+				size++;
+			}
+		}
+	}
+
+	int* c = new int[size];
+	for (int i = 0; i < size; i++)
+	{
+		c[i] = temp[i];
+	}
+
+	if (size == 0)
+	{
+		cout << "Масив порожній" << endl;
+	}
+	else
+	{
+		for (int i = 0; i < size; i++)
+		{
+			cout << c[i] << " ";
+		}
+		cout << endl;
+	}
+
+	delete[] a;
+	delete[] b;
+	delete[] temp;
+	delete[] c;
+
+
+	//Завдання 2
+	//	Дано два масиви : А[M] і B[N](M і N вводяться з клавіатури).Необхідно створити третій масив мінімально можливого розміру, 
+	//	в якому потрібно зібрати елементи масивів A і B, які не є спільними для них, без повторень.
+
+
+	int m, n;
+	cout << "Ведіть розмір масиву M: ";
+	cin >> m;
+	cout << "Ведіть розмір масиву N: ";
+	cin >> n;
+
+	int* a = new int[m];
+	int* b = new int[n];
+
+	cout << "Ведіть елементи масиву A: " << endl;
+	for (int i = 0; i < m; i++)
+	{
+		cin >> a[i];
+	}
+	cout << "Ведіть елементи масиву B: " << endl;
+	for (int i = 0; i < n; i++)
+	{
+		cin >> b[i];
+	}
+
+	int* temp = new int[m + n];
+	int size = 0;
+
+	for (int i = 0; i < m; i++)
+	{
+		bool inB = false;
+		for (int j = 0; j < n; j++)
+		{
+			if (a[i] == b[j])
+			{
+				inB = true;
+				break;
+			}
+		}
+		if (!inB)
+		{
+			bool all = false;
+			for (int k = 0; k < size; k++)
+			{
+				if (a[i] == temp[k])
+				{
+					all = true;
+					break;
+				}
+			}
+			if (!all)
+			{
+				temp[size] = a[i];
+				size++;
+			}
+		}
+	}
+
+	for (int i = 0; i < n; i++)
+	{
+		bool inA = false;
+		for (int j = 0; j < m; j++)
+		{
+			if (b[i] == a[j])
+			{
+				inA = true;
+				break;
+			}
+		}
+		if (!inA)
+		{
+			bool all = false;
+			for (int k = 0; k < size; k++)
+			{
+				if (b[i] == temp[k])
+				{
+					all = true;
+					break;
+				}
+			}
+			if (!all)
+			{
+				temp[size] = b[i];
+				size++;
+			}
+		}
+	}
+
+	int* c = new int[size];
+	for (int i = 0; i < size; i++)
+	{
+		c[i] = temp[i];
+	}
+
+	if (size == 0)
+	{
+		cout << "Масив порожній" << endl;
+	}
+	else
+	{
+		for (int i = 0; i < size; i++)
+		{
+			cout << c[i] << " ";
+		}
+		cout << endl;
+	}
+
+	delete[] a;
+	delete[] b;
+	delete[] temp;
+	delete[] c;
+
+
 	/// 15.06.2026 Lesson 9
 
 	//int a = 5;
