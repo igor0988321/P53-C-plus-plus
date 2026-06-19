@@ -400,3 +400,27 @@ T* addValueArray(T* arr, int* size, T value)
 	(*size)++;
 	return temp;
 }
+
+int* SumProdArray(int* arr, int size)
+{
+	int* res = new int[2] {0, 1};
+
+	for (size_t i = 0; i < size; i++)
+	{
+		res[0] += arr[i];
+		res[1] *= arr[i];
+	}
+
+	return res;
+}
+
+void printArray(int* arr)
+{
+	int block = _msize(arr);
+	int size = block / sizeof(int);
+	for (size_t i = 0; i < size; i++)
+	{
+		cout << arr[i] << " ";
+	}
+	cout << endl;
+}

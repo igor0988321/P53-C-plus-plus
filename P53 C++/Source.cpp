@@ -14,88 +14,177 @@ int main()
 
 	srand(time(0));
 
+	/// 19.06.2026 Lesson 10
+
+	//int a = 5;
+	//const int* pa = &a;
+	//*pa = 99; non
+	//int b = 77;
+	//pa = &b;
+
+	//int* const pa = &a;
+	//*pa = 555;
+	//pa = &b; non
+
+	//const int* const pa = &a;
+
+	//const int& rb = b;
+	//rb = 99;
+
+
+	//int a = 5;     int b = 8;
+	//int* pa = &a;  int& rb = b;
+	//*pa = 99;      rb = 88;
+
+	//pa = &b;       rb = a;
+
+	//inc(a);
+
+	//char a = 8;
+	//char* pa = &a;
+	//cout << sizeof(pa) << endl;
+
+
+	int size;
+	cin >> size;
+	int* p = new int[size];
+	setArray(p, size);
+	printArray(p);
+
+
+	double d = 5.5;
+	double* pd = &d;
+
+	void* pv = p;
+	pv = pd;
+	*((double*)pv) = 5.6;
+
+
+
+	//int* res = SumProdArray(p, size);
+
+	//cout << res[0] << endl;
+
+
+
+
+	int M_1, N_1;
+
+	cout << "M: ";
+	cin >> M_1;
+	int* A = new int[M_1];
+	setArray(A, M_1);
+	SetColor(Blue, Black);
+	cout << "A: ";
+	printArray(A, M_1);
+	SetColor(White, Black);
+
+	cout << "N: ";
+	cin >> N_1;
+	int* B = new int[N_1];
+	setArray(B, N_1);
+	SetColor(Red, Black);
+	cout << "B: ";
+	printArray(B, N_1);
+
+	int* C = nullptr;
+	int C_1 = 0;
+
+	for (size_t i = 0; i < M_1; i++)
+	{
+		if (findArray(B, N_1, A[i]) == -1 && findArray(C, C_1, A[i]) == -1)
+		{
+			addValueArray(C, C_1, A[i]);
+			findArray(B, M_1, A[i]);
+		}
+	}
+
+	//SetColor(Green, Black);
+	//printArray(C, C_1);
+
+
 	//16.06.2026 Home Work 9
 
 	//Завдання 1
 	//	Дано два масиви : А[M] і B[N](M і N вводяться з клавіатури).Необхідно створити третій масив 
 	//	мінімально можливого розміру, у якому потрібно зібрати елементи масиву A, що не включаються в масив B, без повторень.
 
-	int m, n;
-	cout << "Ведіть розмір масиву M: ";
-	cin >> m;
-	cout << "Ведіть розмір масиву N: ";
-	cin >> n;
+	//int m, n;
+	//cout << "Ведіть розмір масиву M: ";
+	//cin >> m;
+	//cout << "Ведіть розмір масиву N: ";
+	//cin >> n;
 
-	int* a = new int[m];
-	int* b = new int[n];
+	//int* a = new int[m];
+	//int* b = new int[n];
 
-	cout << "Ведіть елементи масиву A: " << endl;
-	for (int i = 0; i < m; i++)
-	{
-		cin >> a[i];
-	}
-	cout << "Ведіть елементи масиву B: " << endl;
-	for (int i = 0; i < n; i++)
-	{
-		cin >> b[i];
-	}
+	//cout << "Ведіть елементи масиву A: " << endl;
+	//for (int i = 0; i < m; i++)
+	//{
+	//	cin >> a[i];
+	//}
+	//cout << "Ведіть елементи масиву B: " << endl;
+	//for (int i = 0; i < n; i++)
+	//{
+	//	cin >> b[i];
+	//}
 
-	int* temp = new int[m];
-	int size = 0;
+	//int* temp = new int[m];
+	//int size = 0;
 
-	for (int i = 0; i < m; i++)
-	{
-		bool in = false;
-		for (int j = 0; j < n; j++)
-		{
-			if (a[i] == b[j])
-			{
-				in = true;
-				break;
-			}
-		}
-		if (!in)
-		{
-			bool all = false;
-			for (int k = 0; k < size; k++)
-			{
-				if (a[i] == temp[k])
-				{
-					all = true;
-					break;
-				}
-			}
-			if (!all)
-			{
-				temp[size] = a[i];
-				size++;
-			}
-		}
-	}
+	//for (int i = 0; i < m; i++)
+	//{
+	//	bool in = false;
+	//	for (int j = 0; j < n; j++)
+	//	{
+	//		if (a[i] == b[j])
+	//		{
+	//			in = true;
+	//			break;
+	//		}
+	//	}
+	//	if (!in)
+	//	{
+	//		bool all = false;
+	//		for (int k = 0; k < size; k++)
+	//		{
+	//			if (a[i] == temp[k])
+	//			{
+	//				all = true;
+	//				break;
+	//			}
+	//		}
+	//		if (!all)
+	//		{
+	//			temp[size] = a[i];
+	//			size++;
+	//		}
+	//	}
+	//}
 
-	int* c = new int[size];
-	for (int i = 0; i < size; i++)
-	{
-		c[i] = temp[i];
-	}
+	//int* c = new int[size];
+	//for (int i = 0; i < size; i++)
+	//{
+	//	c[i] = temp[i];
+	//}
 
-	if (size == 0)
-	{
-		cout << "Масив порожній" << endl;
-	}
-	else
-	{
-		for (int i = 0; i < size; i++)
-		{
-			cout << c[i] << " ";
-		}
-		cout << endl;
-	}
+	//if (size == 0)
+	//{
+	//	cout << "Масив порожній" << endl;
+	//}
+	//else
+	//{
+	//	for (int i = 0; i < size; i++)
+	//	{
+	//		cout << c[i] << " ";
+	//	}
+	//	cout << endl;
+	//}
 
-	delete[] a;
-	delete[] b;
-	delete[] temp;
-	delete[] c;
+	//delete[] a;
+	//delete[] b;
+	//delete[] temp;
+	//delete[] c;
 
 
 	//Завдання 2
@@ -103,112 +192,112 @@ int main()
 	//	в якому потрібно зібрати елементи масивів A і B, які не є спільними для них, без повторень.
 
 
-	int m, n;
-	cout << "Ведіть розмір масиву M: ";
-	cin >> m;
-	cout << "Ведіть розмір масиву N: ";
-	cin >> n;
+	//int m, n;
+	//cout << "Ведіть розмір масиву M: ";
+	//cin >> m;
+	//cout << "Ведіть розмір масиву N: ";
+	//cin >> n;
 
-	int* a = new int[m];
-	int* b = new int[n];
+	//int* a = new int[m];
+	//int* b = new int[n];
 
-	cout << "Ведіть елементи масиву A: " << endl;
-	for (int i = 0; i < m; i++)
-	{
-		cin >> a[i];
-	}
-	cout << "Ведіть елементи масиву B: " << endl;
-	for (int i = 0; i < n; i++)
-	{
-		cin >> b[i];
-	}
+	//cout << "Ведіть елементи масиву A: " << endl;
+	//for (int i = 0; i < m; i++)
+	//{
+	//	cin >> a[i];
+	//}
+	//cout << "Ведіть елементи масиву B: " << endl;
+	//for (int i = 0; i < n; i++)
+	//{
+	//	cin >> b[i];
+	//}
 
-	int* temp = new int[m + n];
-	int size = 0;
+	//int* temp = new int[m + n];
+	//int size = 0;
 
-	for (int i = 0; i < m; i++)
-	{
-		bool inB = false;
-		for (int j = 0; j < n; j++)
-		{
-			if (a[i] == b[j])
-			{
-				inB = true;
-				break;
-			}
-		}
-		if (!inB)
-		{
-			bool all = false;
-			for (int k = 0; k < size; k++)
-			{
-				if (a[i] == temp[k])
-				{
-					all = true;
-					break;
-				}
-			}
-			if (!all)
-			{
-				temp[size] = a[i];
-				size++;
-			}
-		}
-	}
+	//for (int i = 0; i < m; i++)
+	//{
+	//	bool inB = false;
+	//	for (int j = 0; j < n; j++)
+	//	{
+	//		if (a[i] == b[j])
+	//		{
+	//			inB = true;
+	//			break;
+	//		}
+	//	}
+	//	if (!inB)
+	//	{
+	//		bool all = false;
+	//		for (int k = 0; k < size; k++)
+	//		{
+	//			if (a[i] == temp[k])
+	//			{
+	//				all = true;
+	//				break;
+	//			}
+	//		}
+	//		if (!all)
+	//		{
+	//			temp[size] = a[i];
+	//			size++;
+	//		}
+	//	}
+	//}
 
-	for (int i = 0; i < n; i++)
-	{
-		bool inA = false;
-		for (int j = 0; j < m; j++)
-		{
-			if (b[i] == a[j])
-			{
-				inA = true;
-				break;
-			}
-		}
-		if (!inA)
-		{
-			bool all = false;
-			for (int k = 0; k < size; k++)
-			{
-				if (b[i] == temp[k])
-				{
-					all = true;
-					break;
-				}
-			}
-			if (!all)
-			{
-				temp[size] = b[i];
-				size++;
-			}
-		}
-	}
+	//for (int i = 0; i < n; i++)
+	//{
+	//	bool inA = false;
+	//	for (int j = 0; j < m; j++)
+	//	{
+	//		if (b[i] == a[j])
+	//		{
+	//			inA = true;
+	//			break;
+	//		}
+	//	}
+	//	if (!inA)
+	//	{
+	//		bool all = false;
+	//		for (int k = 0; k < size; k++)
+	//		{
+	//			if (b[i] == temp[k])
+	//			{
+	//				all = true;
+	//				break;
+	//			}
+	//		}
+	//		if (!all)
+	//		{
+	//			temp[size] = b[i];
+	//			size++;
+	//		}
+	//	}
+	//}
 
-	int* c = new int[size];
-	for (int i = 0; i < size; i++)
-	{
-		c[i] = temp[i];
-	}
+	//int* c = new int[size];
+	//for (int i = 0; i < size; i++)
+	//{
+	//	c[i] = temp[i];
+	//}
 
-	if (size == 0)
-	{
-		cout << "Масив порожній" << endl;
-	}
-	else
-	{
-		for (int i = 0; i < size; i++)
-		{
-			cout << c[i] << " ";
-		}
-		cout << endl;
-	}
+	//if (size == 0)
+	//{
+	//	cout << "Масив порожній" << endl;
+	//}
+	//else
+	//{
+	//	for (int i = 0; i < size; i++)
+	//	{
+	//		cout << c[i] << " ";
+	//	}
+	//	cout << endl;
+	//}
 
-	delete[] a;
-	delete[] b;
-	delete[] temp;
-	delete[] c;
+	//delete[] a;
+	//delete[] b;
+	//delete[] temp;
+	//delete[] c;
 
 
 	/// 15.06.2026 Lesson 9
