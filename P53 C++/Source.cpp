@@ -14,6 +14,91 @@ int main()
 
 	srand(time(0));
 
+	/// 20.06.2026 Home Work 10
+
+
+	int size;
+
+	//Завдання 1
+	//	Написати такі функції для роботи з динамічним масивом :
+	// 
+	//Функція розподілу динамічної пам'яті.
+	int* arr = allocateArray(size);
+
+	//	Функція ініціалізації динамічного масиву.
+	initialArray(arr, size, 10);
+
+	//	Функція друку динамічного масиву.
+	printArray2(arr, size);
+
+	//	Функція видалення динамічного масиву.
+	deleteArray(arr);
+
+	//	Функція додавання елемента в кінець масиву.
+	inBack(arr, size, 99);
+
+	//	Функція вставки елемента за вказаним індексом.
+	insertIndex(arr, size, 2, 55);
+
+	//	Функція видалення елемента за вказаним індексом.
+	remove(arr, size, 4);
+
+
+	//Завдання 2
+	//	Написати функцію, яка отримує покажчик на динамічний 
+	//	масив і його розмір.Функція повинна видалити з масиву всі прості числа і повернути покажчик на новий динамічний масив.
+
+	int size = 4;
+	int* arr = new int[size] {1, 2, 3, 4};
+
+	int* arr3 = remove(arr, size);
+
+	for (int i = 0; i < size; ++i)
+	{
+		cout << arr3[i] << " ";
+	}
+	delete[] arr;
+	delete[] arr3;
+
+	//Завдання 3
+	//	Написати функцію, яка отримує покажчик на
+	//	статичний масив і його розмір.Функція розподіляє додатні, від'ємні та нульові елементи в окремі динамічні масиви.
+
+	const int size = 10;
+	int arr[size] = { 5, -3, 0, 12, -8, 0, 7, -1, 0, 4 };
+
+
+	int* posArr = nullptr;
+	int* negArr = nullptr;
+	int* zerArr = nullptr;
+
+	int posCount = 0;
+	int negCount = 0;
+	int zerCount = 0;
+
+	splitArray(arr, size, posArr, posCount, negArr, negCount, zerArr, zerCount);
+
+	cout << "Додатні" << posCount;
+	for (size_t i = 0; i < posCount; i++)
+	{
+		cout << posArr[i] << " ";
+	}
+	cout << "Від'ємні" << negCount;
+	for (size_t i = 0; i < negCount; i++)
+	{
+		cout << negArr[i] << " ";
+	}
+	cout << "Нулі" << zerCount;
+	for (size_t i = 0; i < zerCount; i++)
+	{
+		cout << zerArr[i] << " ";
+	}
+
+
+	delete[] posArr;
+	delete[] negArr;
+	delete[] zerArr;
+
 	/// 19.06.2026 Lesson 10
 
 	//int a = 5;
@@ -45,59 +130,59 @@ int main()
 	//cout << sizeof(pa) << endl;
 
 
-	int size;
-	cin >> size;
-	int* p = new int[size];
-	setArray(p, size);
-	printArray(p);
+	//int size;
+	//cin >> size;
+	//int* p = new int[size];
+	//setArray(p, size);
+	//printArray(p);
 
 
-	double d = 5.5;
-	double* pd = &d;
+	//double d = 5.5;
+	//double* pd = &d;
 
-	void* pv = p;
-	pv = pd;
-	*((double*)pv) = 5.6;
-
-
-
-	//int* res = SumProdArray(p, size);
-
-	//cout << res[0] << endl;
+	//void* pv = p;
+	//pv = pd;
+	//*((double*)pv) = 5.6;
 
 
 
+	////int* res = SumProdArray(p, size);
 
-	int M_1, N_1;
+	////cout << res[0] << endl;
 
-	cout << "M: ";
-	cin >> M_1;
-	int* A = new int[M_1];
-	setArray(A, M_1);
-	SetColor(Blue, Black);
-	cout << "A: ";
-	printArray(A, M_1);
-	SetColor(White, Black);
 
-	cout << "N: ";
-	cin >> N_1;
-	int* B = new int[N_1];
-	setArray(B, N_1);
-	SetColor(Red, Black);
-	cout << "B: ";
-	printArray(B, N_1);
 
-	int* C = nullptr;
-	int C_1 = 0;
 
-	for (size_t i = 0; i < M_1; i++)
-	{
-		if (findArray(B, N_1, A[i]) == -1 && findArray(C, C_1, A[i]) == -1)
-		{
-			addValueArray(C, C_1, A[i]);
-			findArray(B, M_1, A[i]);
-		}
-	}
+	//int M_1, N_1;
+
+	//cout << "M: ";
+	//cin >> M_1;
+	//int* A = new int[M_1];
+	//setArray(A, M_1);
+	//SetColor(Blue, Black);
+	//cout << "A: ";
+	//printArray(A, M_1);
+	//SetColor(White, Black);
+
+	//cout << "N: ";
+	//cin >> N_1;
+	//int* B = new int[N_1];
+	//setArray(B, N_1);
+	//SetColor(Red, Black);
+	//cout << "B: ";
+	//printArray(B, N_1);
+
+	//int* C = nullptr;
+	//int C_1 = 0;
+
+	//for (size_t i = 0; i < M_1; i++)
+	//{
+	//	if (findArray(B, N_1, A[i]) == -1 && findArray(C, C_1, A[i]) == -1)
+	//	{
+	//		addValueArray(C, C_1, A[i]);
+	//		findArray(B, M_1, A[i]);
+	//	}
+	//}
 
 	//SetColor(Green, Black);
 	//printArray(C, C_1);

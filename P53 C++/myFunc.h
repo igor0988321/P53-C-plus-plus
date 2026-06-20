@@ -424,3 +424,243 @@ void printArray(int* arr)
 	}
 	cout << endl;
 }
+
+bool prime(int num)
+{
+	if (num <= 1)
+	{
+		return false;
+	}
+	for (int i = 2; i < num; i++)
+	{
+		if (num % i == 0)
+		{
+			return false;
+		}
+	}
+	return true;
+}
+
+int* remove(const int* arr, int& size)
+{
+	int size2 = 0;
+	for (int i = 0; i < size; ++i)
+	{
+		if (!prime(arr[i]))
+		{
+			size2++;
+		}
+	}
+	if (size2 == 0)
+	{
+		return nullptr;
+	}
+
+	int* arr2 = new int[size2];
+	int index = 0;
+
+	for (int i = 0; i < size; ++i)
+	{
+		if (!prime(arr[i]))
+		{
+			arr2[index++] = arr[i];
+		}
+	}
+
+	size = size2;
+	return arr2;
+}
+
+void splitArray(const int* arr, int size, int*& pos, int& posSize, int*& neg, int& negSize, int*& zer, int& zerSize)
+{
+	posSize = 0;
+	negSize = 0;
+	zerSize = 0;
+
+	for (int i = 0; i < size; ++i)
+	{
+		if (arr[i] > 0)
+		{
+			posSize++;
+		}
+		else if (arr[i] < 0)
+		{
+			negSize++;
+		}
+		else
+		{
+			zerSize++;
+		}
+	}
+	if (posSize > 0) {
+		pos = new int[posSize]; 
+	}
+	else {
+		pos = nullptr;          
+	}
+
+	if (negSize > 0) {
+		neg = new int[negSize]; 
+	}
+	else {
+		neg = nullptr;
+	}
+
+	if (zerSize > 0) {
+		zer = new int[zerSize];   
+	}
+	else {
+		zer = nullptr;
+	}
+	
+	int posi = 0;
+	int negi = 0;
+	int zeri = 0;
+
+	for (int i = 0; i < size; ++i)
+	{
+		if (arr[i] > 0)
+		{
+			pos[posi++] = arr[i];
+		}
+		else if (arr[i] < 0)
+		{
+			neg[negi++] = arr[i];
+		}
+		else
+		{
+			zer[zeri++] = arr[i];
+		}
+	}
+}
+
+//1. Функція розподілу динамічної пам'яті
+int* allocateArray(int size)
+{
+	if (size <= 0)
+	{
+		return nullptr;
+		return new int[size];
+	}
+}
+
+//2. Функція ініціалізації динамічного масиву
+void initialArray(int* arr, int size, int num = 0)
+{
+	if (!arr)
+	{
+		return;
+	}
+	for (int i = 0; i < size; i++)
+	{
+		arr[i] = num + i;
+	}
+}
+
+//3. Функція друку динамічного масиву
+void printArray2(const int* arr, int size)
+{
+	if (size <= 0)
+	{
+		cout << "Масив порожній";
+		return;
+	}
+
+	for (int i = 0; i < size; ++i)
+	{
+		cout << arr[i] << " ";
+	}
+	cout << endl;
+}
+
+//4. Функція видалення динамічного масиву
+
+void deleteArray(int*& arr)
+{
+	if (arr != nullptr)
+	{
+		delete[] arr;
+		arr = nullptr;
+	}
+}
+
+//5. Функція додавання елемента в кінець масиву
+
+void inBack(int*& arr, int& size, int num)
+{
+	int* arr2 = allocateArray(size + 1);
+
+	for (int i = 0; i < size; i++)
+	{
+		arr2[i] = arr[i];
+	}
+
+	arr2[size] = num;
+
+	deleteArray(arr);
+	arr = arr2;
+	size++;
+}
+
+//6. Функція вставки елемента за вказаним індексом
+
+void insertIndex(int*& arr, int& size, int index, int num)
+{
+	if (index < 0 || index > size)
+	{
+		cout << "Не коректний індекс";
+		return;
+	}
+
+	int* arr2 = allocateArray(size + 1);
+
+	for (int i = 0; i <  index ; ++i)
+	{
+		arr2[i] = arr[i];
+	}
+
+	arr2[index] = num;
+
+	for (int i = 0; i < size; ++i)
+	{
+		arr2[i + 1] = arr[i];
+	}
+
+	deleteArray(arr);
+	arr = arr2;
+	size++;
+}
+
+// 7. Функція видалення елемента за вказаним індексом
+
+void remove(int*& arr, int& size, int index)
+{
+	if (index < 0 || index >= size)
+	{
+		cout << "Не коректний індекс";
+		return;
+	}
+
+	if (size == 1)
+	{
+		deleteArray(arr);
+		size = 0;
+		return;
+	}
+
+	int* arr2 = allocateArray(size - 1);
+
+	for (int i = 0; i < index; ++i)
+	{
+		arr2[i] = arr[i];
+	}
+
+	for (int i = index + 1; i < size; ++i)
+	{
+		arr2[i - 1] = arr[i];
+	}
+
+	deleteArray(arr);
+	arr = arr2;
+	size--;
+}
