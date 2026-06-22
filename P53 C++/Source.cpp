@@ -14,90 +14,164 @@ int main()
 
 	srand(time(0));
 
+	/// 22.06.2026 Lesson 11
+
+	int a, b, op;
+	int(*operation[])(int, int) = { sum };
+	cin >> a >> b;
+	cout << "1 +, 2 -, 3 *, 4 /" << endl;
+	cin >> op;
+	cout << operation[op - 1](a, b) << endl;
+
+
+
+
+
+	//int len = 3400;
+	//void(*director)() = prorab(len);
+	//director();
+
+
+
+	//int bullets[] = { 50, 50, 50 };
+	//void(*shoot)(int*);
+	//while (true)
+	//{
+	//	if (_kbhit())
+	//	{
+	//		int c = _getch();
+	//		switch (c)
+	//		{
+	//		case ' ':
+	//			shoot = selectWeapon(bullets);
+	//			shoot(bullets);
+	//			break;
+	//		case 'a':
+	//			arrow(bullets);
+	//			break;
+	//		default:
+	//			break;
+	//		}
+	//	}
+	//}
+
+
+
+	//int size = 10;
+	////cin >> size;
+	//int* p = new int[size];
+	//setArray(p, size);
+	//printArray(p);
+	//bublleSort(p, size, desc);
+	//
+	//forEach(p, size, print);
+	//
+	//printArray(p);
+
+
+
+	// type (*name) (param)
+
+	//void(*message)() = hello;
+
+	//message();
+
+	//message = goodbye;
+
+	//message();
+
+	//void(*func)(int, char) = starLine;
+
+	//void(*message[])() = { hello, goodbye };
+	//for (size_t i = 0; i < 2; i++)
+	//{
+	//	message[i]();
+	//}
+
 	/// 20.06.2026 Home Work 10
 
 
-	int size;
+	//int size;
 
 	//Завдання 1
 	//	Написати такі функції для роботи з динамічним масивом :
 	// 
 	//Функція розподілу динамічної пам'яті.
-	int* arr = allocateArray(size);
+	//int* arr = allocateArray(size);
 
 	//	Функція ініціалізації динамічного масиву.
-	initialArray(arr, size, 10);
+	//initialArray(arr, size, 10);
 
 	//	Функція друку динамічного масиву.
-	printArray2(arr, size);
+	//printArray2(arr, size);
 
 	//	Функція видалення динамічного масиву.
-	deleteArray(arr);
+	//deleteArray(arr);
 
 	//	Функція додавання елемента в кінець масиву.
-	inBack(arr, size, 99);
+	//inBack(arr, size, 99);
 
 	//	Функція вставки елемента за вказаним індексом.
-	insertIndex(arr, size, 2, 55);
+	//insertIndex(arr, size, 2, 55);
 
 	//	Функція видалення елемента за вказаним індексом.
-	remove(arr, size, 4);
+	//remove(arr, size, 4);
 
 
 	//Завдання 2
 	//	Написати функцію, яка отримує покажчик на динамічний 
 	//	масив і його розмір.Функція повинна видалити з масиву всі прості числа і повернути покажчик на новий динамічний масив.
 
-	int size = 4;
-	int* arr = new int[size] {1, 2, 3, 4};
+	//int size = 4;
+	//int* arr = new int[size] {1, 2, 3, 4};
 
-	int* arr3 = remove(arr, size);
+	//int* arr3 = remove(arr, size);
 
-	for (int i = 0; i < size; ++i)
-	{
-		cout << arr3[i] << " ";
-	}
-	delete[] arr;
-	delete[] arr3;
+	//for (int i = 0; i < size; ++i)
+	//{
+	//	cout << arr3[i] << " ";
+	//}
+	//delete[] arr;
+	//delete[] arr3;
 
 	//Завдання 3
 	//	Написати функцію, яка отримує покажчик на
 	//	статичний масив і його розмір.Функція розподіляє додатні, від'ємні та нульові елементи в окремі динамічні масиви.
 
-	const int size = 10;
-	int arr[size] = { 5, -3, 0, 12, -8, 0, 7, -1, 0, 4 };
+	//const int size = 10;
+	//int arr[size] = { 5, -3, 0, 12, -8, 0, 7, -1, 0, 4 };
 
 
-	int* posArr = nullptr;
-	int* negArr = nullptr;
-	int* zerArr = nullptr;
+	//int* posArr = nullptr;
+	//int* negArr = nullptr;
+	//int* zerArr = nullptr;
 
-	int posCount = 0;
-	int negCount = 0;
-	int zerCount = 0;
+	//int posCount = 0;
+	//int negCount = 0;
+	//int zerCount = 0;
 
-	splitArray(arr, size, posArr, posCount, negArr, negCount, zerArr, zerCount);
+	//splitArray(arr, size, posArr, posCount, negArr, negCount, zerArr, zerCount);
 
-	cout << "Додатні" << posCount;
-	for (size_t i = 0; i < posCount; i++)
-	{
-		cout << posArr[i] << " ";
-	}
-	cout << "Від'ємні" << negCount;
-	for (size_t i = 0; i < negCount; i++)
-	{
-		cout << negArr[i] << " ";
-	}
-	cout << "Нулі" << zerCount;
-	for (size_t i = 0; i < zerCount; i++)
-	{
-		cout << zerArr[i] << " ";
-	}
+	//cout << "Додатні" << posCount;
+	//for (size_t i = 0; i < posCount; i++)
+	//{
+	//	cout << posArr[i] << " ";
+	//}
+	//cout << "Від'ємні" << negCount;
+	//for (size_t i = 0; i < negCount; i++)
+	//{
+	//	cout << negArr[i] << " ";
+	//}
+	//cout << "Нулі" << zerCount;
+	//for (size_t i = 0; i < zerCount; i++)
+	//{
+	//	cout << zerArr[i] << " ";
+	//}
 
 
-	delete[] posArr;
-	delete[] negArr;
-	delete[] zerArr;
+	//delete[] posArr;
+	//delete[] negArr;
+	//delete[] zerArr;
 
 	/// 19.06.2026 Lesson 10
 

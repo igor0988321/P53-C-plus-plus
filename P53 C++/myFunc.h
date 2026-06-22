@@ -664,3 +664,98 @@ void remove(int*& arr, int& size, int index)
 	arr = arr2;
 	size--;
 }
+
+void hello()
+{
+	cout << "Hello" << endl;
+}
+
+void goodbye()
+{
+	cout << "Goodbye" << endl;
+}
+
+void mult10(int& a)
+{
+	a *= 10;
+}
+
+void print(int& a)
+{
+	cout << a << " ";
+}
+
+int sum(int a, int b)
+{
+	return a + b;
+}
+
+template<class T>
+void forEach(T* arr, int size, void(*func)(T&))
+{
+	for (size_t i = 0; i < size; i++)
+	{
+		func(arr[i]);
+	}
+}
+
+
+void kopatel1()
+{
+	//
+	cout << "Копає один робітник з лопатою" << endl;
+}
+
+
+void kopatel3()
+{
+	cout << "Копають три робітника з лопатами і кірками" << endl;
+}
+
+void exkavator()
+{
+	cout << "Копає екскаватор, робітники курять в сторонці.. ))" << endl;
+}
+
+void(*prorab(int len))()
+{
+	if (len <= 100)
+	{
+		return kopatel1;
+	}
+	else if (len <= 500)
+	{
+		return kopatel3;
+	}
+	else
+	{
+		return exkavator;
+	}
+}
+
+
+void pistol(int* bullets)
+{
+	cout << "->" << endl;
+	bullets[0]--;
+}
+
+void gun(int* bullets)
+{
+	cout << "-> -> -> -> -> " << endl;
+	bullets[1] -= 5;
+}
+
+void arrow(int* bullets)
+{
+	cout << ">>----->" << endl;
+	bullets[2] -= 1;
+}
+
+
+void(*selectWeapon(int* bullets))(int*)
+{
+	void(*weapons[])(int*) = { pistol, gun, arrow };
+
+	return weapons[findArray(bullets, 3, maxValueArray(bullets, 3))];
+}
