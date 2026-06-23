@@ -759,3 +759,67 @@ void(*selectWeapon(int* bullets))(int*)
 
 	return weapons[findArray(bullets, 3, maxValueArray(bullets, 3))];
 }
+
+double getMax(const int* arr, int size, const int* arr2, int size2)
+{
+	int maxValue = 0;
+
+	for (int i = 0; i < size; ++i)
+	{
+		if (arr[i] > maxValue)
+		{
+			maxValue = arr[i];
+		}
+	}
+	for (int i = 0; i < size2; ++i)
+	{
+		if (arr2[i] > maxValue)
+		{
+			maxValue = arr2[i];
+		}
+	}
+	return maxValue;
+}
+
+double getMin(const int* arr, int size, const int* arr2, int size2)
+{
+	int minValue = 0;
+
+	for (int i = 0; i < size; ++i)
+	{
+		if (arr[i] < minValue)
+		{
+			minValue = arr[i];
+		}
+	}
+	for (int i = 0; i < size2; ++i)
+	{
+		if (arr2[i] < minValue)
+		{
+			minValue = arr2[i];
+		}
+	}
+	return minValue;
+}
+
+double getAvg(const int* arr, int size, const int* arr2, int size2)
+{
+	double sum = 0;
+	int size3 = size + size2;
+	
+	for (int i = 0; i < size; ++i)
+	{
+		sum += arr[i];
+	}
+	for (int i = 0; i < size2; i++)
+	{
+		sum += arr2[i];
+	}
+	return sum / size3;
+}
+
+
+double Action(const int* arr, int size, const int* arr2, int size2, double(*op)(const int*, int, const int*, int))
+{
+	return op(arr, size, arr2, size2);
+}
