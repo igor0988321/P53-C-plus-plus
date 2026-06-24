@@ -823,3 +823,69 @@ double Action(const int* arr, int size, const int* arr2, int size2, double(*op)(
 {
 	return op(arr, size, arr2, size2);
 }
+
+template<class T>
+void createArray(T**& arr, int row, int col)
+{
+	arr = new T * [row];
+	for (size_t i = 0; i < row; i++)
+	{
+		arr[i] = new T[col];
+	}
+}
+
+template<class T>
+void setArray(T** arr, int row, int col)
+{
+	for (size_t i = 0; i < row; i++)
+	{
+		for (size_t j = 0; j < col; j++)
+		{
+			arr[i][j] = rand() % 10;
+		}
+	}
+}
+
+template<class T>
+void printArray(T** arr, int row, int col)
+{
+	for (size_t i = 0; i < row; i++)
+	{
+		for (size_t j = 0; j < col; j++)
+		{
+			cout << arr[i][j] << " ";
+		}
+		cout << endl;
+	}
+}
+
+template<class T>
+void deleteArray(T**& arr, int row)
+{
+	for (size_t i = 0; i < row; i++)
+	{
+		delete[] arr[i];
+	}
+	delete[] arr;
+	arr = nullptr;
+}
+
+template<class T>
+void addRowArray(T**& arr, int& row, int col, T* newRow = nullptr)
+{
+	T** temp = new T * [row + 1];
+	for (size_t i = 0; i < row; i++)
+	{
+		temp[i] = arr[i];
+	}
+
+	temp[row] = new T[col];
+	for (size_t i = 0; i < col; i++)
+	{
+		temp[row][i] = (newRow != nullptr) ? newRow[i] : 0;
+	}
+
+	delete[] arr;
+	row++;
+	arr = temp;
+}

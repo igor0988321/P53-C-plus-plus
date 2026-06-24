@@ -15,6 +15,30 @@ int main()
 	srand(time(0));
 
 
+	/// 24.06.2026 Lesson 12
+	
+	int row, col;
+	cin >> row >> col;
+
+	int** p = nullptr;
+
+	createArray(p, row, col);
+	setArray(p, row, col);
+	printArray(p, row, col);
+
+	int* t = new int[col];
+	setArray(t, col);
+
+	addRowArray(p, row, col);
+
+	delete[] t;
+
+	cout << endl;
+	printArray(p, row, col);
+
+	deleteArray(p, row);
+
+
 	/// 23.06.2026 Home Work 11
 
 	//Завдання
@@ -22,53 +46,53 @@ int main()
 	//	Користувачеві відображається меню, в якому він може вибрати max, min, avg.Якщо обрано max, передається покажчик на функцію, яка шукає максимум; якщо обрано min, передається покажчик на функцію, яка шукає мінімум; якщо обрано avg, передається покажчик на функцію, яка шукає середнє.
 	//	Повернуте значення функції Action — результат вибору користувача max, min, avg.
 
-	const int size = 5;
-	const int size2 = 4;
-	int arr[size] = { 1,2,3,45,5 };
-	int arr2[size2] = { 0,-1,5,3 };
+	//const int size = 5;
+	//const int size2 = 4;
+	//int arr[size] = { 1,2,3,45,5 };
+	//int arr2[size2] = { 0,-1,5,3 };
 
-	cout << "1. Масив";
-	for (size_t i = 0; i < size; i++)
-	{
-		cout << arr[i] << " ";
-	}
-	cout << "2. Масив";
-	for (size_t i = 0; i < size2; i++)
-	{
-		cout << arr2[i] << " ";
-	}
+	//cout << "1. Масив";
+	//for (size_t i = 0; i < size; i++)
+	//{
+	//	cout << arr[i] << " ";
+	//}
+	//cout << "2. Масив";
+	//for (size_t i = 0; i < size2; i++)
+	//{
+	//	cout << arr2[i] << " ";
+	//}
 
-	cout << "Оберіть операцію:";
-	cout << "1 - Знайти MAX";
-	cout << "2 - Знайти MIN";
-	cout << "3 - Знайти AVG";
-	cout << "Ваш вибір: ";
+	//cout << "Оберіть операцію:";
+	//cout << "1 - Знайти MAX";
+	//cout << "2 - Знайти MIN";
+	//cout << "3 - Знайти AVG";
+	//cout << "Ваш вибір: ";
 
-	int choice;
-	cin >> choice;
+	//int choice;
+	//cin >> choice;
 
-	double (*operation)(const int*, int, const int*, int) = 0;
+	//double (*operation)(const int*, int, const int*, int) = 0;
 
-	if (choice == 1)
-	{
-		operation = getMax;
-	}
-	else if (choice == 2)
-	{
-		operation = getMin;
-	}
-	else if (choice == 3)
-	{
-		operation = getAvg;
-	}
-	else
-	{
-		cout << "Неправильний вибір"<< endl;
-		return;
-	}
+	//if (choice == 1)
+	//{
+	//	operation = getMax;
+	//}
+	//else if (choice == 2)
+	//{
+	//	operation = getMin;
+	//}
+	//else if (choice == 3)
+	//{
+	//	operation = getAvg;
+	//}
+	//else
+	//{
+	//	cout << "Неправильний вибір"<< endl;
+	//	return;
+	//}
 
-	double result = Action(arr, size, arr2, size2, operation);
-	cout << result << endl;
+	//double result = Action(arr, size, arr2, size2, operation);
+	//cout << result << endl;
 
 	/// 22.06.2026 Lesson 11
 
