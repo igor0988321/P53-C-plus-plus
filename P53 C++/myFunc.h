@@ -889,3 +889,34 @@ void addRowArray(T**& arr, int& row, int col, T* newRow = nullptr)
 	row++;
 	arr = temp;
 }
+
+template<class T>
+void insertColumn(T** arr, int row, int& col, T* col2, int index)
+{
+	for (size_t i = 0; i < row; i++)
+	{
+		for (size_t j = col; j > index; j--)
+		{
+			arr[i][j] = arr[i][j - 1];
+		}
+	}
+
+	for (size_t i = 0; i < row; i++)
+	{
+		arr[i][index] = col2[i];
+	}
+	col++;
+}
+
+template<class T>
+void deleteColumn(T** arr, int row, int& col,  int index)
+{
+	for (size_t i = 0; i < row; i++)
+	{
+		for (size_t j = index; j < col - 1; j++)
+		{
+			arr[i][j] = arr[i][j + 1];
+		}
+	}
+	col--;
+}

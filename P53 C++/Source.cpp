@@ -14,29 +14,62 @@ int main()
 
 	srand(time(0));
 
+	//25.06.2026 Home Work 12
+
+	int row = 3;
+	int col = 3;
+
+	int** arr = new int* [row];
+	for (size_t i = 0; i < row; i++)
+	{
+		arr[i] = new int[10];
+	}
+
+	setArray(arr, row, col);
+	printArray(arr, row, col);
+
+	//Завдання 1
+		//Написати функцію, що додає стовпчик двовимірному масиву в зазначену позицію.
+	//Завдання 2
+		//Написати функцію, що видаляє стовпчик двовимірного масиву за вказаним номером.
+
+	int* col2 = new int[row] {1, 1, 1};
+	insertColumn(arr, row, col, col2, 1);
+	cout << endl;
+	printArray(arr, row, col);
+	cout << endl;
+	deleteColumn(arr, row, col, 1);
+	printArray(arr, row, col);
+
+	delete[] arr;
+	delete[] col2;
+
+
+	
+
 
 	/// 24.06.2026 Lesson 12
 	
-	int row, col;
-	cin >> row >> col;
+	//int row, col;
+	//cin >> row >> col;
 
-	int** p = nullptr;
+	//int** p = nullptr;
 
-	createArray(p, row, col);
-	setArray(p, row, col);
-	printArray(p, row, col);
+	//createArray(p, row, col);
+	//setArray(p, row, col);
+	//printArray(p, row, col);
 
-	int* t = new int[col];
-	setArray(t, col);
+	//int* t = new int[col];
+	//setArray(t, col);
 
-	addRowArray(p, row, col);
+	//addRowArray(p, row, col);
 
-	delete[] t;
+	//delete[] t;
 
-	cout << endl;
-	printArray(p, row, col);
+	//cout << endl;
+	//printArray(p, row, col);
 
-	deleteArray(p, row);
+	//deleteArray(p, row);
 
 
 	/// 23.06.2026 Home Work 11
