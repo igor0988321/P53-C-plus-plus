@@ -20,9 +20,10 @@ int main()
 	int col = 3;
 
 	int** arr = new int* [row];
+
 	for (size_t i = 0; i < row; i++)
 	{
-		arr[i] = new int[10];
+		arr[i] = new int[col];
 	}
 
 	setArray(arr, row, col);

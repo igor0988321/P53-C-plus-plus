@@ -895,16 +895,24 @@ void insertColumn(T** arr, int row, int& col, T* col2, int index)
 {
 	for (size_t i = 0; i < row; i++)
 	{
-		for (size_t j = col; j > index; j--)
+		T* row2 = new T[col + 1];
+
+		for (size_t j = 0; j < index; j++)
 		{
-			arr[i][j] = arr[i][j - 1];
+			row2[j] = arr[i][j];
 		}
+		row2[index] = col2[i];
+		
+		for (size_t j = index; j < col; j++)
+		{
+			row2[j + 1] = arr[i][j];
+		}
+
+		delete[] arr[i];
+		arr[i] = row2;
 	}
 
-	for (size_t i = 0; i < row; i++)
-	{
-		arr[i][index] = col2[i];
-	}
+	
 	col++;
 }
 
@@ -913,10 +921,20 @@ void deleteColumn(T** arr, int row, int& col,  int index)
 {
 	for (size_t i = 0; i < row; i++)
 	{
-		for (size_t j = index; j < col - 1; j++)
+		T* row2 = new T[col - 1];
+
+		for (size_t j = 0; j < index; j++)
 		{
-			arr[i][j] = arr[i][j + 1];
+			row2[j] = arr[i][j];
 		}
+
+		for (size_t j = index + 1; j < col; j++)
+		{
+			row2[j - 1] = arr[i][j];
+		}
+
+		delete[] arr[i];
+		arr[i] = row2;
 	}
 	col--;
 }
