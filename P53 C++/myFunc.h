@@ -938,3 +938,72 @@ void deleteColumn(T** arr, int row, int& col,  int index)
 	}
 	col--;
 }
+
+
+template<class T>
+void addColsArray(T**& arr, int row, int& col, T* newCol = nullptr)
+{
+	for (size_t i = 0; i < row; i++)
+	{
+		addValueArray(arr[i], col, newCol[i]);
+		col--;
+	}
+	col++;
+}
+
+
+int*** createMatrix(int* arr)
+{
+	int size = _msize(arr) / sizeof(int);
+	int count = 0;
+	for (size_t i = 2; i < size; i++)
+	{
+		if (size % i == 0)
+		{
+			count++;
+		}
+	}
+
+	int*** m = new int** [count];
+	int k = 0;
+	for (size_t i = 2; i < size; i++)
+	{
+		if (size % i == 0)
+		{
+			int row = i;
+			int col = size / i;
+			createArray(m[k], row, col);
+			for (size_t j = 0; j < size; j++)
+			{
+				m[k][j / col][j % col] = arr[j];
+			}
+			k++;
+		}
+	}
+	return m;
+}
+
+void print(int*** arr)
+{
+	int count = _msize(arr) / sizeof(int**);
+	for (size_t k = 0; k < count; k++)
+	{
+		int row = _msize(arr[k]) / sizeof(int*);
+		int col = _msize(arr[k][0]) / sizeof(int);
+		printArray(arr[k], row, col);
+		cout << endl;
+	}
+}
+
+int** multiplayMaxrix(int** a, int** b)
+{
+	int r1 = _msize(a) / sizeof(int*);
+	int c1 = _msize(a[0]) / sizeof(int);
+
+	int r2 = _msize(b) / sizeof(int*);
+	int c2 = _msize(b[0]) / sizeof(int);
+
+	int** m = nullptr;
+	createArray(m, r1, c2);
+
+}

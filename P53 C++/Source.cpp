@@ -14,36 +14,53 @@ int main()
 
 	srand(time(0));
 
+	/// 26.06.2026 Lesson 13
+
+	//double** a;
+	//a = new double*;
+	//*a = new double(5);
+	//cout << **a << endl; // 5
+
+
+	int size;
+	cin >> size;
+	int* arr = new int[size];
+	setArray(arr, size);
+	printArray(arr);
+	int*** a = createMatrix(arr);
+
+	print(a);
+
 	//25.06.2026 Home Work 12
 
-	int row = 3;
-	int col = 3;
+	//int row = 3;
+	//int col = 3;
 
-	int** arr = new int* [row];
+	//int** arr = new int* [row];
 
-	for (size_t i = 0; i < row; i++)
-	{
-		arr[i] = new int[col];
-	}
+	//for (size_t i = 0; i < row; i++)
+	//{
+	//	arr[i] = new int[col];
+	//}
 
-	setArray(arr, row, col);
-	printArray(arr, row, col);
+	//setArray(arr, row, col);
+	//printArray(arr, row, col);
 
 	//Завдання 1
 		//Написати функцію, що додає стовпчик двовимірному масиву в зазначену позицію.
 	//Завдання 2
 		//Написати функцію, що видаляє стовпчик двовимірного масиву за вказаним номером.
 
-	int* col2 = new int[row] {1, 1, 1};
-	insertColumn(arr, row, col, col2, 1);
-	cout << endl;
-	printArray(arr, row, col);
-	cout << endl;
-	deleteColumn(arr, row, col, 1);
-	printArray(arr, row, col);
+	//int* col2 = new int[row] {1, 1, 1};
+	//insertColumn(arr, row, col, col2, 1);
+	//cout << endl;
+	//printArray(arr, row, col);
+	//cout << endl;
+	//deleteColumn(arr, row, col, 1);
+	//printArray(arr, row, col);
 
-	delete[] arr;
-	delete[] col2;
+	//delete[] arr;
+	//delete[] col2;
 
 
 	
