@@ -14,6 +14,55 @@ int main()
 
 	srand(time(0));
 
+	/// 27.06.2026 Home Work 14
+
+	int rowA, colA;
+	int rowB, colB;
+
+	cout << "Введіть кількість рядків матриці А: ";
+	cin >> rowA;
+	cout << "Введіть кількість стовпчиків матриці А: ";
+	cin >> colA;
+
+	cout << "Введіть кількість рядків матриці В: ";
+	cin >> rowB;
+	cout << "Введіть кількість стовпчиків матриці В: ";
+	cin >> colB;
+	cout << endl;
+
+	if (colA != rowB)
+	{
+		return 0;
+	}
+
+	int** a = nullptr;
+	int** b = nullptr;
+
+	createArray(a, rowA, colA);
+	createArray(b, rowB, colB);
+
+	setArray(a, rowA, colA);
+	setArray(b, rowB, colB);
+
+	printArray(a, rowA, colA);
+	printArray(b, rowB, colB);
+
+	int** matrix = multiplayMatrix(a, b);
+
+	if (matrix != nullptr)
+	{
+		int rows2 = _msize(matrix) / sizeof(int*);
+		int cols2 = _msize(matrix[0]) / sizeof(int);
+
+		printArray(matrix, rows2, cols2);
+
+		deleteArray(matrix, rows2);
+	}
+
+
+	deleteArray(a, rowA);
+	deleteArray(b, rowB);
+
 	/// 26.06.2026 Lesson 13
 
 	//double** a;
@@ -22,14 +71,14 @@ int main()
 	//cout << **a << endl; // 5
 
 
-	int size;
-	cin >> size;
-	int* arr = new int[size];
-	setArray(arr, size);
-	printArray(arr);
-	int*** a = createMatrix(arr);
+	//int size;
+	//cin >> size;
+	//int* arr = new int[size];
+	//setArray(arr, size);
+	//printArray(arr);
+	//int*** a = createMatrix(arr);
 
-	print(a);
+	//print(a);
 
 	//25.06.2026 Home Work 12
 

@@ -995,7 +995,7 @@ void print(int*** arr)
 	}
 }
 
-int** multiplayMaxrix(int** a, int** b)
+int** multiplayMatrix(int** a, int** b)
 {
 	int r1 = _msize(a) / sizeof(int*);
 	int c1 = _msize(a[0]) / sizeof(int);
@@ -1003,7 +1003,27 @@ int** multiplayMaxrix(int** a, int** b)
 	int r2 = _msize(b) / sizeof(int*);
 	int c2 = _msize(b[0]) / sizeof(int);
 
+	if (c1 != r2)
+	{
+		return nullptr;
+	}
+
 	int** m = nullptr;
 	createArray(m, r1, c2);
+
+	
+
+	for (size_t i = 0; i < r1; i++)
+	{
+		for (size_t j = 0; j < c2; j++)
+		{
+			m[i][j] = 0;
+			for (size_t k = 0; k < c1; k++)
+			{
+				m[i][j] += a[i][k] * b[k][j];
+			}
+		}
+	}
+	return m;
 
 }
