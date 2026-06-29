@@ -1027,3 +1027,62 @@ int** multiplayMatrix(int** a, int** b)
 	return m;
 
 }
+
+int lenStr(const char* str)
+{
+	int len = 0;
+	while (str[len] != '\0')
+	{
+		len++;
+	}
+	return len;
+}
+
+
+char* removeSymbol(char* str, char symb)
+{
+	int size = strlen(str);
+	int len = countValueArray(str, size, symb);
+	char* temp = new char[size - len + 1];
+	int k = 0;
+	for (int i = 0; i < size; i++)
+	{
+		if (str[i] != symb)
+		{
+			temp[k++] = str[i];
+		}
+	}
+	temp[size - len] = '\0';
+
+	return temp;
+}
+
+
+int countWords(const char* str) {
+	int count = 0;
+	bool inWord = false;
+	for (int i = 0; str[i] != '\0'; i++) {
+		if (isspace(str[i])) {
+			inWord = false;
+		}
+		else {
+			if (!inWord) {
+				count++;
+				inWord = true;
+			}
+		}
+	}
+
+	return count;
+}
+
+bool isPalindrome(const char* st)
+{
+	int size = strlen(st);
+	for (size_t i = 0; i < size / 2; i++)
+	{
+		if (st[i] != st[size - 1 - i])
+			return false;
+	}
+	return true;
+}

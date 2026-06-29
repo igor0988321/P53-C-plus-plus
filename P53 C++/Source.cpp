@@ -14,54 +14,128 @@ int main()
 
 	srand(time(0));
 
-	/// 27.06.2026 Home Work 14
+	/// 29.06.2026 Lesson 14
 
-	int rowA, colA;
-	int rowB, colB;
-
-	cout << "Введіть кількість рядків матриці А: ";
-	cin >> rowA;
-	cout << "Введіть кількість стовпчиків матриці А: ";
-	cin >> colA;
-
-	cout << "Введіть кількість рядків матриці В: ";
-	cin >> rowB;
-	cout << "Введіть кількість стовпчиків матриці В: ";
-	cin >> colB;
-	cout << endl;
-
-	if (colA != rowB)
-	{
-		return 0;
-	}
-
-	int** a = nullptr;
-	int** b = nullptr;
-
-	createArray(a, rowA, colA);
-	createArray(b, rowB, colB);
-
-	setArray(a, rowA, colA);
-	setArray(b, rowB, colB);
-
-	printArray(a, rowA, colA);
-	printArray(b, rowB, colB);
-
-	int** matrix = multiplayMatrix(a, b);
-
-	if (matrix != nullptr)
-	{
-		int rows2 = _msize(matrix) / sizeof(int*);
-		int cols2 = _msize(matrix[0]) / sizeof(int);
-
-		printArray(matrix, rows2, cols2);
-
-		deleteArray(matrix, rows2);
-	}
+	//char st[] = "Hello";//{ 'H', 'e', 'l', 'l', 'o', '\0'};
+	//int a[5];
+	//cout << a << endl;
+	//cout << (void*)st << endl;
+	//cout << lenStr(st) << endl;
+	//cout << lenStr("mama") << endl;
+	//cout << strlen("mama") << endl;
 
 
-	deleteArray(a, rowA);
-	deleteArray(b, rowB);
+	//char buffer[1024];
+	//cin.getline(buffer, 1024);
+	//int len = strlen(buffer);
+	//char* str = new char[len + 1];
+	////strcpy_s(str, len + 1, buffer);
+	//strcpy(str, buffer);
+	//cout << str << endl;
+
+
+	//cout << removeSymbol(str, 'a') << endl;
+
+
+
+	char st1[80], st2[80];
+	cout << "1: "; cin.getline(st1, 80);
+	cout << "2: "; cin.getline(st2, 80);
+
+	//strcpy(st1, st2);
+	//strncpy_s(st1, 80, st2, 3);
+
+	//strcat(st1, st2);
+	//strncat(st1, st2, 2);
+
+	//cout << strcmp(st1, st2) << endl;
+	//cout << strncmp(st1, st2, 3) << endl;
+	//cout << _stricmp(st1, st2) << endl;
+	//cout << _strnicmp(st1, st2, 3) << endl;
+
+	//char* t = strchr(st1, 'a');
+	//char* t = strrchr(st1, 'a');
+	//char* t = strstr(st1, "ma");
+	//if(t != nullptr)
+	//	cout << t << endl;
+
+	//_strset(st1, '*');
+
+	//int a = atoi(st1);
+	//long a = atol(st1);
+	//double d = atof(st1);
+	//cout << d << endl;
+
+	//_itoa(765765, st1, 36);
+
+	//cout << _strupr(st1) << endl;
+	//cout << _strlwr(st1) << endl;
+
+	//cout << isalnum('!') << endl;
+	//cout << isdigit('!') << endl;
+	//cout << isalpha('!') << endl;
+	//cout << isspace('!') << endl;
+	//cout << ispunct('!') << endl;
+	//cout << isprint('!') << endl;
+	//cout << isupper('!') << endl;
+	//cout << islower('a') << endl;
+
+
+	//cout << "1 : " << st1 << endl;
+	//cout << "2 : " << st2 << endl;
+
+
+	//cout << countWords("  jhkjh    kjh kjh kjh") << endl;
+	cout << isPalindrome("12343321") << endl;
+
+	/// 27.06.2026 Home Work 13
+
+	//int rowA, colA;
+	//int rowB, colB;
+
+	//cout << "Введіть кількість рядків матриці А: ";
+	//cin >> rowA;
+	//cout << "Введіть кількість стовпчиків матриці А: ";
+	//cin >> colA;
+
+	//cout << "Введіть кількість рядків матриці В: ";
+	//cin >> rowB;
+	//cout << "Введіть кількість стовпчиків матриці В: ";
+	//cin >> colB;
+	//cout << endl;
+
+	//if (colA != rowB)
+	//{
+	//	return 0;
+	//}
+
+	//int** a = nullptr;
+	//int** b = nullptr;
+
+	//createArray(a, rowA, colA);
+	//createArray(b, rowB, colB);
+
+	//setArray(a, rowA, colA);
+	//setArray(b, rowB, colB);
+
+	//printArray(a, rowA, colA);
+	//printArray(b, rowB, colB);
+
+	//int** matrix = multiplayMatrix(a, b);
+
+	//if (matrix != nullptr)
+	//{
+	//	int rows2 = _msize(matrix) / sizeof(int*);
+	//	int cols2 = _msize(matrix[0]) / sizeof(int);
+
+	//	printArray(matrix, rows2, cols2);
+
+	//	deleteArray(matrix, rows2);
+	//}
+
+
+	//deleteArray(a, rowA);
+	//deleteArray(b, rowB);
 
 	/// 26.06.2026 Lesson 13
 
