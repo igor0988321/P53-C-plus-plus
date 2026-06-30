@@ -1086,3 +1086,70 @@ bool isPalindrome(const char* st)
 	}
 	return true;
 }
+
+int mystrcmp(const char* str1, const char* str2)
+{
+	int i = 0;
+
+	while (str1[i] != '\0' && str2[i] != '\0' && str1[i] == str2[i])
+	{
+		i++;
+	}
+	if (str1[i] == str2[i])
+	{
+		return 0;
+	}
+	if (str1[i] > str2[i])
+	{
+		return 1;
+	}
+	else
+	{
+		return -1;
+	}
+}
+
+char* Uppercase(char* str1)
+{
+	char* num = str1;
+	while (*num)
+	{
+		if (*num >= 'a' && *num <= 'z')
+		{
+			*num = *num - ('a' - 'A');
+		}
+		num++;
+	}
+	return str1;
+}
+
+
+char* Uppercase(char* str1)
+{
+	char* num = str1;
+	while (*num)
+	{
+		if (*num >= 'A' && *num <= 'Z')
+		{
+			*num = *num + ('a' - 'A');
+		}
+		num++;
+	}
+	return str1;
+}
+
+char* mystrrev(char* str)
+{
+	int len = 0;
+	while (str[len] != '\0')
+	{
+		len++;
+	}
+	for (size_t i = 0; i < len / 2; i++)
+	{
+		char temp = str[i];
+		str[i] = str[len - 1 - i];
+		str[len - 1 - i] = temp;
+	}
+	return str;
+}

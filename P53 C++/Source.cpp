@@ -14,6 +14,12 @@ int main()
 
 	srand(time(0));
 
+	/// 30.06.2026 Home Work 14
+
+	char word[] = "akpskkns";
+	cout << mystrrev(word) << endl;
+	
+
 	/// 29.06.2026 Lesson 14
 
 	//char st[] = "Hello";//{ 'H', 'e', 'l', 'l', 'o', '\0'};
