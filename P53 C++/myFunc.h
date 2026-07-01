@@ -1153,3 +1153,46 @@ char* mystrrev(char* str)
 	}
 	return str;
 }
+
+
+bool compareString(char* const& s1, char* const& s2)
+{
+	return strcmp(s1, s2) > 0;
+}
+
+char* deleteWord(const char* st, const char* word)
+{
+	const char* p;
+	int lenWord = strlen(word);
+	char* newStr = new char[strlen(st) + 1];
+	newStr[0] = '\0';
+	while ((p = strstr(st, word)) != nullptr)
+	{
+		strncat(newStr, st, p - st);
+		st = p + lenWord;
+	}
+	strcat(newStr, st);
+	return newStr;
+}
+
+
+char* replaceWord(const char* st, const char* _old, const char* _new)
+{
+	const char* p;
+	int lenWord = strlen(_old);
+	char* newStr = new char[8000];
+	newStr[0] = '\0';
+	while ((p = strstr(st, _old)) != nullptr)
+	{
+		strncat(newStr, st, p - st);
+		strcat(newStr, _new);
+		st = p + lenWord;
+	}
+	strcat(newStr, st);
+
+	char* temp = new char[strlen(newStr) + 1];
+	strcpy(temp, newStr);
+	delete newStr;
+
+	return temp;
+}

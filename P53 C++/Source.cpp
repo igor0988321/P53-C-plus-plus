@@ -3,6 +3,7 @@
 #include<iomanip>
 
 #include"myFunc.h"
+#include"myStruct.h"
 
 using namespace std;
 
@@ -14,10 +15,66 @@ int main()
 
 	srand(time(0));
 
+	/// 01.07.2026 Lesson 15
+
+	//Point p;
+	//p.name = 'A';
+	//p.x = 10;
+	//p.y = 12;
+
+	//Point p1 = { 'B', 13, 5 };
+
+	//Point p2[4];
+
+	//printPoint(p);
+	//printPoint(p1);
+
+	//Human h = { new char[] {"Vasya"}, {10, 2, 2000} };
+	//h.bd.day = 10;
+
+	//Point* p3 = new Point;
+	//p3->x = 55;
+
+
+
+
+	// "C++ C# SQL C++"
+	// "C++"
+	// " C# SQL "
+
+
+	//cout << replaceWord("C++ C# SQL C++ Python", "C++", "") << endl;
+	//cout << replaceWord("C++ C# SQL C++ Python", "C++", "*********") << endl;
+
+	//int size = 5;
+	//char** names = new char* [size];
+	//char buffer[1024];
+	//for (size_t i = 0; i < size; i++)
+	//{
+	//	cin.getline(buffer, 1024);
+	//	int len = strlen(buffer);
+	//	names[i] = new char[len + 1];
+	//	strcpy_s(names[i], len + 1, buffer);
+	//}
+	//cout << endl;
+	//for (size_t i = 0; i < size; i++)
+	//{
+	//	cout << names[i] << endl;
+	//}
+
+	//bubbleSort(names, size, compareString);
+
+	//cout << endl;
+	//for (size_t i = 0; i < size; i++)
+	//{
+	//	cout << names[i] << endl;
+	//}
+
+
 	/// 30.06.2026 Home Work 14
 
-	char word[] = "akpskkns";
-	cout << mystrrev(word) << endl;
+	//char word[] = "akpskkns";
+	//cout << mystrrev(word) << endl;
 	
 
 	/// 29.06.2026 Lesson 14
